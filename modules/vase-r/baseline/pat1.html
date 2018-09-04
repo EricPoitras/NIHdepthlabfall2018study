@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+      
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../../../css/stylesheet.css">
+    <link rel="stylesheet" href="../../../css/rangecustom.css">
+    <link rel="stylesheet" href="../../../css/countdowntimercustom.css">
+
+    <title>NIH depth</title>
+  </head>
+  <body class="fontcus modulestep">
+    
+      <div class="container-fluid headerarea">
+          <div class="row">
+              <div class="col p-0">
+                  <nav class="navbar fontcus navcus1">
+                    <div class="col-10 p-0 offset-1 justify-content-around d-flex">
+                        <a class="navbar-brand" href="../../../index.html">
+                        <img src="../../../assets/Logov2.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                        NIH DEPTH: MI Training
+                        </a>
+                        <a href="../../vase-r.html" class="invisible pt-2 labelcus">&#60; Video Assessment of Simulated Encounters</a>
+                        <a href="../../../modules.html" class="invisible pt-2 labelcus">Modules</a>
+                        <a id="help" href="#" class="pt-2 labelcus">HELP</a>
+                    </div>
+                  </nav>
+              </div>  
+          </div>
+      </div> <!-- End of Navbar -->  
+      <div class="container-fluid dashboardarea">
+          <div class="row">
+              
+              <!-- Toolbar -->
+              <div class="col-3 p-0 toolbararea">
+                <h5 class="p-3 toolbarhighlight">Instructions</h5>
+                <p class="p-3 text-justify">Write a response that indicates you are listening. Your response should reflect something you might actually say to a client. Write from the first person perspective as if you are actually talking to him.</p>
+              </div>
+              
+              <!-- Content -->
+              <div class="col contentarea">
+                    <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+                        
+                        <div id="video-container">
+                          <!-- Video -->
+                          <video id="video" width="640" height="365">
+                            <!--<source src="videos/mikethefrog.webm" type="video/webm">
+                            <source src="videos/mikethefrog.ogv" type="video/ogv">-->
+                        
+                            <!--<source src="videos/mikethefrog.webm" type="video/webm">
+                            <source src="videos/mikethefrog.ogv" type="video/ogv">-->
+                            <source src="../../../assets/Videos/pat1v2.mp4" type="video/mp4">
+                            <p>
+                              Your browser doesn't support HTML5 video.
+                              <a href="../../../assets/Videos/pat1v2.mp4">Download</a> the video instead.
+                            </p>
+                        
+                          </video>
+                          <!-- Video Controls -->
+                          <div id="video-controls" class="text-center">
+                            <button type="button" id="play-pause" class="btn"><i class="fas fa-play"></i></button>
+                            <input type="range" id="seek-bar" value="0">
+                            <button type="button" id="mute" class="btn"><i class="fas fa-volume-off"></i></button>
+                            <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+                            <button type="button" id="full-screen" class="btn"><i class="fas fa-window-maximize"></i></button>
+                          </div>
+                        </div>
+                        
+                        <div id="responsearea" class="card p-3 invisiblecus">
+                            <form>
+                                <div class="form-group">
+                                    <textarea class="form-control bas0val" id="ResponseTextarea" rows="3" placeholder="Please write a response that indicates you are listening..."></textarea>
+                                </div>
+                                <div id="countdown"> 
+                                    <div class="countdown-label">Time Remaining: <span id='time' class="color-full">45</span> sec</div>
+                                </div>
+                            </form>
+                            <div class="alert alert-success invisiblecus" role="alert">
+                              Thank you for submitting your response, please proceed to the next step.
+                            </div>
+                            <div class="alert alert-danger invisiblecus" role="alert">
+                              Please submit your response to the client.
+                            </div>
+                            <div class="alert alert-info invisiblecus" role="alert">
+                              The maximum time allowed to submit a response has elapsed, please proceed to the next step.
+                            </div>
+                            <a id="responsesubmit" role="button" href="#" class="btn buttoncus primarycolcus float-right text-white bas0submit">Submit</a>  
+                        </div>
+                        
+                    </div>
+              </div>
+          </div>          
+      </div> <!-- End of Dashboard -->
+      <div class="container-fluid footerarea">
+          <div class="row">
+              <div class="col">
+                    <button type="submit" class="btn toolbarbutton">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                  
+                    <h5 class="toolbarlabel">Pat: Sample Question 1</h5>
+                    <div class="justify-content-around d-flex">
+                        <a id="previous" role="button" href="../../vase-r.html" class="disabled btn buttoncus primarycolcus text-white">Previous</a>
+                        <a id="next" role="button" href="pat2.html" class="disabled btn buttoncus primarycolcus text-white">Next</a>
+                    </div>
+              </div>
+          </div>
+      </div> <!-- End of Navbar --> 
+      
+      <!-- Help Modal -->
+        <div class="modal fade" id="ModalHelp" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Help</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ul>
+                    <li>Generate or identify individual responses you believe would be most helpful to the client, given what is known about him/her.</li> 
+                    <li>Responses should reflect something you might actually say to a client in their practice situation (written from 1st-person perspective).</li>
+                    <li>If the clients portrayed do not match the types of clients you typically see, still attempt to apply the principles you recognize as being helpful in creating behavior change.</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn buttoncus primarycolcus" data-dismiss="modal">CLOSE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- Replace jQuery slim library with full version: https://code.jquery.com/jquery/; You can also get it from W3school site: https://www.w3schools.com/jquery/jquery_get_started.asp-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- Script reference to your jquery code appears here -->
+    
+    <script src="../../../js/jquery.js"></script>
+    <script src="../../../js/videocuscontrol.js"></script> <!-- Blocks user navigation away from page -->
+    <script src="../../../js/countdowntimer.js"></script> <!-- Countdown timer -->
+    <script src="../../../data/data.js"></script> <!-- Log and correct responses -->
+    <script src="../../../data/logdata.js"></script> 
+       <script>
+        
+        $(document).ready(function(){
+           $("#help").click(function(){
+               $('#ModalHelp').modal("show");
+           }) 
+        });
+    </script>
+      
+ <script type="text/javascript" src="/core/bypass/html5/js/xml2json.js"></script>       <script type="text/javascript" src="/core/bypass/html5/typescript/background/all.js"></script>       <script type="text/javascript" src="/core/bypass/html5/typescript/all.js"></script>       <script type="text/javascript" src="/core/bypass/html5/js/ep.js"></script>       <script type="text/javascript" src="/core/bypass/html5/js/epuserfunctions2.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script></body>
+</html>
