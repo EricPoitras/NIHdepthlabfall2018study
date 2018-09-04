@@ -1,0 +1,27 @@
+/* Styling the different states of the counter */
+.color-full {
+    color: #53bb74;
+}
+.color-half {
+    color: #ebc85d;
+}
+.color-empty {
+    color: #e5554e;
+}
+
+/* Styling the label of the counter*/
+.countdown-label {
+	text-transform: uppercase;
+	display: block;
+    color: gray;
+}
+
+/* Positioning and styling the box for the counter */
+#countdown{
+    /*box-shadow: 0 1px 2px 0 rgba(1, 1, 1, 0.4);*/
+    margin: 5px;
+	text-align: center;
+    /*background: #f1f1f1;
+	border-radius: 5px; */
+	margin-bottom: 15px;
+}

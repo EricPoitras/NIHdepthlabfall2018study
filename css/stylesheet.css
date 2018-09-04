@@ -1,0 +1,439 @@
+
+/*
+Color Palette
+
+
+SUNSHINE #F7B733
+
+
+Orange #FF6632      VERMILLION #FC4A1A             #b42a75, #db1836
+Purple #8166F9     FRESH #4ABDAC                #16a9c9
+White #F8F8F8   CLEAN #DFDCE3
+*/
+
+/* Typography used to be Barlow */
+
+#video-controls .value{
+    display:none;
+}
+
+
+#video{
+    width: 900px !important;
+    height: 600px !important;
+}
+
+.p-3 {
+    font-size:22px;
+    text-align: left !important;
+}
+
+.fontcus{
+    font-family: 'Helvetica', sans-serif;
+}
+
+.displaycus{
+    font-size: 34pt;
+}
+
+.headlinecus{
+    font-size: 24pt;
+}
+
+.titlecus{
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.subheadingcus{
+    font-size: 18pt;
+}
+
+.bodycus{
+    font-size: 18pt;
+}
+
+.buttoncus{
+    font-size: 16pt;
+    text-transform: uppercase;
+}
+
+.labelcus{
+    font-size: 14pt;
+    text-transform: uppercase;
+}
+
+/* Color Palette */
+
+.primarycolcus{
+    background-color: #db1836;
+    color: white;
+}
+
+.secondarycolcus{
+    color: #16a9c9;
+}
+
+.tertiarycolcus{
+    color: #DFDCE3;
+}
+
+/* Navigation Bar */
+nav.navcus1{
+    text-transform: uppercase;
+    background-color: white;
+}
+
+nav.navcus1 a.navbar-brand{
+    text-transform: none;
+    color: black;
+}
+
+nav.navcus1 a.labelcus{
+    border-bottom: 7px solid transparent;
+}
+
+nav.navcus1 a.labelcus:hover{
+    border-bottom: 7px solid #db1836;
+}
+
+/* Landing Page */
+.landingpage{
+    background-color: rgb(227,227,227);
+}
+
+.sitemessage1, .sitemessage2{
+    text-align: center;
+}
+
+.sitemessage1{
+    margin-top: 100px;
+    text-transform: uppercase;
+}
+
+.sitemessage2{
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.graphcon{
+    position: relative;
+}
+
+.graphcon .img1{
+    position: absolute;
+    height: 75px;
+    left: 125px;
+}
+
+.graphcon .img2{
+    position: absolute;
+    height: 100px;
+    left: 450px;
+    top: 75px;
+}
+
+.graphcon .img3{
+    position: absolute;
+    height: 225px;
+    left: 100px;
+    top: 100px;
+}
+
+.graphcon .img4{
+    position: absolute;
+    height: 75px;
+    left: 0px;
+    top: 250px;
+}
+
+.graphcon .img5{
+    position: absolute;
+    height: 75px;
+    top: 100px;
+}
+
+.graphcon .img6{
+    position: absolute;
+    height: 75px;
+    left: 450px;
+    top: 325px;
+}
+
+.graphcon .img7{
+    position: absolute;
+    height: 75px;
+    left: 225px;
+}
+
+.graphcon .img8{
+    position: absolute;
+    height: 75px;
+    left: 350px
+}
+
+/* Modules page */
+
+.modulecusarea{
+    background-color: #16a9c9;
+}
+
+.modulepage{
+    background-color: white;
+}
+
+.modulescard{
+    padding: 5px;
+}
+
+.modulescard .card{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.modulescard .card img{
+    height: 75px;
+    width: 100px;
+    float: right;
+    margin-left: 15px;
+}
+
+.modulescard .card h5{
+    padding-left: 10px;
+    line-height: 150%;
+}
+
+.modulescard .card p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.moduletitle{
+    margin-top: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    color: #16a9c9;
+}
+
+.activecus, .activecus2{
+    background-color: rgb(227,227,227);
+}
+
+/* Sub-Page of Modules */
+.modulehighlight{
+    color: white;
+    background-color: #16a9c9;
+}
+
+.modulepage .list-group-item{
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 1px solid lightgray;
+    border-radius: 0px;
+}
+
+.modulepage .modulescard .cardcus h5{
+    line-height: 3;
+}
+
+/* Module Steps */
+
+.modulestep{
+    height: 100vh;
+    background-color: rgb(227,227,227);
+}
+
+.modulestep .headerarea{
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+}
+
+.modulestep .footerarea{
+    position: fixed;
+    bottom: 0px;
+    z-index: 999;
+    background-color: white;
+    padding: 10px;
+}
+
+.modulestep .toolbararea{
+    height: 100vh;
+    background-color: white;
+    padding-top: 58px !important;
+    overflow-y: auto;
+}
+
+.modulestep .contentarea{
+    padding: 58px;
+}
+
+.modulestep .contentarea{
+    height: 100vh;
+}
+
+.modulestep .toolbarbutton{
+    position: fixed;
+    z-index: 999;
+    bottom: 12px;
+    left: 15px;
+    font-size: 1.5em;
+    color: #db1836;
+    background-color: white;
+    border: 2px solid #db1836;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 1px;
+    border-radius: 5px;
+}
+
+.modulestep .toolbarlabel{
+    position: fixed;
+    bottom: 12px;
+    left: 70px;
+    color: #db1836;
+}
+
+.modulestep .toolbarhighlight{
+    background-color: rgb(220,220,220);
+    color: #db1836;
+}
+
+#responsearea{
+    width: 60%;
+}
+
+/* Video Control */
+
+#play-pause, #mute, #full-screen, #loading{
+    color: #db1836;
+    font-size: 2em;
+    background-color: transparent;
+    border: 0px solid transparent;
+    padding: 5px;
+}
+
+/*#seek-bar, #volume-bar{
+    color: #db1836;
+    background-color: #db1836;
+}*/
+
+/* Avatar Talk Turn */
+.contentarea{
+    overflow: auto;
+    /*margin-top: 58px;*/
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 0px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.contentarea #discussion{
+    margin-bottom: 50px;
+    height: 80vh;
+}
+
+.contentarea #discussion .client{
+    margin-right: 10vw;
+}
+
+.contentarea #discussion .therapist{
+    margin-left: 10vw;
+}
+
+.contentarea #discussion .card{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.contentarea #discussion .userpic img{
+    height: 50px;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+}
+
+.contentarea #discussion .comment{
+    position: relative;
+    padding: 25px;
+}
+
+.contentarea #discussion .comment p{
+    margin-left: 10px;
+}
+
+.contentarea #discussion .discussionend{
+    height: 100px;
+}
+
+/* Override BS4 Sheet */
+.form-control:focus{
+    border-color: #db1836;
+    box-shadow: none;    
+}
+
+.btn:focus, .btn:active {
+    box-shadow: 0 0 0 3px #db183640;
+}
+
+a:link, a:visited, a:hover, a:active{
+    text-decoration: none;
+    color: black;
+}
+
+.invisiblecus{
+    display: none !important;
+}
+
+.visiblecus{
+    display: flex !important;
+}
+
+#feedbackarea .alert{
+    padding: 5px;
+    margin-bottom: 55px;
+}
+
+#hintarea .alert{
+    margin-bottom: 0px;
+}
+
+.alert ul{
+    margin-bottom: 5px;
+}
+
+#reportarea{
+    position: relative;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.fa-flag{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #db1836;
+    border: 2px solid #db1836;
+    border-radius: 50%;
+    font-size: 15px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+/* UI Components hidden for the purposes of animating CSS display property */
+#hintarea, .alert-success, .alert-danger, #responsedisplayarea, #loading{
+    display: none;
+}

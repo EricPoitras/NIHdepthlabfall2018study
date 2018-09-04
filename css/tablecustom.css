@@ -1,0 +1,19 @@
+table{
+    font-size: 1.3em;
+}
+
+td{
+    border: 1px solid white;
+}
+
+th{
+    background-color: #db1836;
+    color: white;
+    border: 1px solid #db1836;
+    text-align: center;
+}
+
+tbody{
+    background-color: lightgray;
+    text-align: center;
+}

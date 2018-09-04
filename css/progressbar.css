@@ -1,0 +1,19 @@
+.progress{
+    background-color: rgb(175,175,175);
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+}
+
+.progress-bar{
+    background-color: #16a9c9; 
+    width: 0%;
+}
+
+.card{
+    position: relative;
+}
+
