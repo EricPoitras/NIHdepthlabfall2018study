@@ -1286,7 +1286,15 @@ function AgentDefault(){
     $(".alert-success").fadeIn("fast");
 }
 
+function ValidationNegative(){
+    $("#validationmessage").delay("slow").removeClass("invisiblecus");
+    $("#validationmessage").addClass("visiblecus");
+}
 
+function ValidationPositive(){
+    $("#validationmessage").delay("slow").removeClass("visiblecus");
+    $("#validationmessage").addClass("invisiblecus");
+}
 
 function addEventListeners(){
     // Set variable for username and password
@@ -2362,18 +2370,28 @@ function addEventListeners(){
 
     $(".mi1submit").click(function(){
         [mi[0], mi[1], mi[2]] = GetItemResponseMultiTextArea();
-        mipro = UpdateProgressIndicator(mi);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(mi[0]=="" || mi[1]=="" || mi[2]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            mipro = UpdateProgressIndicator(mi);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage(); 
+        }
     });
 
     $(".mi2submit").click(function(){
         [mi[3], mi[4], mi[5]] = GetItemResponseMultiTextArea();
-        mipro = UpdateProgressIndicator(mi);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(mi[3]=="" || mi[4]=="" || mi[5]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            mipro = UpdateProgressIndicator(mi);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     // Open or Close 1 to 10
@@ -2627,102 +2645,147 @@ function addEventListeners(){
 
     $(".oars28submit").click(function(){
         oars[27] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[0] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[27]==""){
+            //ValidationNegative handled through feedbackresponse.js
+        }else{
+            //ValidationPositive handled through feedbackresponse.js
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[0] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars29submit").click(function(){
         oars[28] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[1] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[28]==""){
+            //ValidationNegative handled through feedbackresponse.js
+        }else{
+            //ValidationPositive handled through feedbackresponse.js
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[1] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars30submit").click(function(){
         oars[29] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[2] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[29]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[2] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
+        
     });
 
     $(".oars31submit").click(function(){
         oars[30] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[3] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[30]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[3] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars32submit").click(function(){
         oars[31] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[4] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[31]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[4] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars33submit").click(function(){
         oars[32] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[5] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[32]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[5] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
+        
     });
 
     $(".oars34submit").click(function(){
         oars[33] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[6] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[33]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[6] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars35submit").click(function(){
         oars[34] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[7] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[34]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[7] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars36submit").click(function(){
         oars[35] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[8] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[35]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[8] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars37submit").click(function(){
         oars[36] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 13);
-        oarsanswercorrect3[9] = CorrectOpenAnswer(agentanswerkey, 13);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[36]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 13);
+            oarsanswercorrect3[9] = CorrectOpenAnswer(agentanswerkey, 13);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
+        
     });
 
     // These were deleted from a previous version
@@ -2859,96 +2922,133 @@ function addEventListeners(){
 
     $(".oars50submit").click(function(){
         oars[49] = GetItemResponseTextArea();
-        console.log(oars[49]);
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        oarsanswercorrect5[0] = CorrectOpenAnswer(agentanswerkey, 3);
-        console.log(oarsanswercorrect5[0]);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[49]==""){
+            
+        }else{
+            console.log(oars[49]);
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            oarsanswercorrect5[0] = CorrectOpenAnswer(agentanswerkey, 3);
+            console.log(oarsanswercorrect5[0]);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars51submit").click(function(){
         oars[50] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        oarsanswercorrect5[1] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[50]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            oarsanswercorrect5[1] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
+        
     });
 
     // Silver Lining
 
     $(".oars52submit").click(function(){
         oars[51] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 11);
-        oarsanswercorrect6[0] = CorrectOpenAnswer(agentanswerkey, 11);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[51]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 11);
+            oarsanswercorrect6[0] = CorrectOpenAnswer(agentanswerkey, 11);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars53submit").click(function(){
         oars[52] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 11);
-        oarsanswercorrect6[1] = CorrectOpenAnswer(agentanswerkey, 11);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[52]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 11);
+            oarsanswercorrect6[1] = CorrectOpenAnswer(agentanswerkey, 11);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars54submit").click(function(){
         oars[53] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 11);
-        oarsanswercorrect6[2] = CorrectOpenAnswer(agentanswerkey, 11);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[53]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 11);
+            oarsanswercorrect6[2] = CorrectOpenAnswer(agentanswerkey, 11);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars55submit").click(function(){
         oars[54] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 11);
-        oarsanswercorrect6[3] = CorrectOpenAnswer(agentanswerkey, 11);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[54]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 11);
+            oarsanswercorrect6[3] = CorrectOpenAnswer(agentanswerkey, 11);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars56submit").click(function(){
         oars[55] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 11);
-        oarsanswercorrect6[4] = CorrectOpenAnswer(agentanswerkey, 11);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[55]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 11);
+            oarsanswercorrect6[4] = CorrectOpenAnswer(agentanswerkey, 11);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars57submit").click(function(){
         oars[56] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 11);
-        oarsanswercorrect6[5] = CorrectOpenAnswer(agentanswerkey, 11);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[56]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 11);
+            oarsanswercorrect6[5] = CorrectOpenAnswer(agentanswerkey, 11);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".oars58submit").click(function(){
         oars[57] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 11);
-        oarsanswercorrect6[6] = CorrectOpenAnswer(agentanswerkey, 11);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[57]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 11);
+            oarsanswercorrect6[6] = CorrectOpenAnswer(agentanswerkey, 11);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     // Focusing
@@ -3087,148 +3187,220 @@ function addEventListeners(){
 
     $(".focus14submit").click(function(){
         [target[13], target[14], target[15]] = GetItemResponseMultiTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[13]=="" || target[14]=="" || target[15]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            tarpro = UpdateProgressIndicator(target);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
+        
     });
 
     $(".focus15submit").click(function(){
         target[16] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[16]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            tarpro = UpdateProgressIndicator(target);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus16submit").click(function(){
         [target[17], target[18], target[19]] = GetItemResponseMultiTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[17]=="" || target[18]=="" || target[19]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            tarpro = UpdateProgressIndicator(target);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus17submit").click(function(){
         target[20] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[20]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            tarpro = UpdateProgressIndicator(target);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus18asubmit").click(function(){
         target[21] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[0] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[21]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[0] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage(); 
+        }
     });
 
     $(".focus18bsubmit").click(function(){
         target[22] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[1] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[22]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[1] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();   
+        }
     });
 
     $(".focus18csubmit").click(function(){
         target[23] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[2] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[23]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[2] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus19submit").click(function(){
         target[24] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[24]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            tarpro = UpdateProgressIndicator(target);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus20asubmit").click(function(){
         target[25] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[3] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[25]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[3] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus20bsubmit").click(function(){
         target[26] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[4] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[26]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[4] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();   
+        }
     });
 
     $(".focus20csubmit").click(function(){
         target[27] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[5] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[27]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[5] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus21submit").click(function(){
         target[28] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[28]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            tarpro = UpdateProgressIndicator(target);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus22asubmit").click(function(){
         target[29] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[6] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[29]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[6] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus22bsubmit").click(function(){
         target[30] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[7] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[30]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[7] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();   
+        }
     });
 
     $(".focus22csubmit").click(function(){
         target[31] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        targetanswercorrect2[8] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[31]==""){
+            
+        }else{
+            tarpro = UpdateProgressIndicator(target);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            targetanswercorrect2[8] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();   
+        }
     });
 
     $(".focus23submit").click(function(){
         target[32] = GetItemResponseTextArea();
-        tarpro = UpdateProgressIndicator(target);
-        AgentDefault();
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(target[32]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            tarpro = UpdateProgressIndicator(target);
+            AgentDefault();
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".focus24submit").click(function(){
@@ -3246,12 +3418,16 @@ function addEventListeners(){
         evok[1] = GetItemDropDownList();
         evokanswercorrect2[0] = CorrectAnswer(evok, evokanswerkey2, 1, 0);
         evok[2] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[0] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[2]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[0] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok2submit").click(function(){
@@ -3260,12 +3436,16 @@ function addEventListeners(){
         evok[4] = GetItemDropDownList();
         evokanswercorrect2[1] = CorrectAnswer(evok, evokanswerkey2, 4, 1);
         evok[5] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[1] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[5]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[1] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok3submit").click(function(){
@@ -3274,12 +3454,16 @@ function addEventListeners(){
         evok[7] = GetItemDropDownList();
         evokanswercorrect2[2] = CorrectAnswer(evok, evokanswerkey2, 7, 2);
         evok[8] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[2] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[8]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[2] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok4submit").click(function(){
@@ -3288,12 +3472,16 @@ function addEventListeners(){
         evok[10] = GetItemDropDownList();
         evokanswercorrect2[3] = CorrectAnswer(evok, evokanswerkey2, 10, 3);
         evok[11] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[3] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[11]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[3] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok5submit").click(function(){
@@ -3302,12 +3490,16 @@ function addEventListeners(){
         evok[13] = GetItemDropDownList();
         evokanswercorrect2[4] = CorrectAnswer(evok, evokanswerkey2, 13, 4);
         evok[14] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[4] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[14]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[4] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok6submit").click(function(){
@@ -3316,12 +3508,16 @@ function addEventListeners(){
         evok[16] = GetItemDropDownList();
         evokanswercorrect2[5] = CorrectAnswer(evok, evokanswerkey2, 16, 5);
         evok[17] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[5] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[17]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[5] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok7submit").click(function(){
@@ -3330,12 +3526,16 @@ function addEventListeners(){
         evok[19] = GetItemDropDownList();
         evokanswercorrect2[6] = CorrectAnswer(evok, evokanswerkey2, 19, 6);
         evok[20] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[6] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[20]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[6] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok8submit").click(function(){
@@ -3344,12 +3544,16 @@ function addEventListeners(){
         evok[22] = GetItemDropDownList();
         evokanswercorrect2[7] = CorrectAnswer(evok, evokanswerkey2, 22, 7);
         evok[23] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[7] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[23]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[7] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok9submit").click(function(){
@@ -3358,12 +3562,16 @@ function addEventListeners(){
         evok[25] = GetItemDropDownList();
         evokanswercorrect2[8] = CorrectAnswer(evok, evokanswerkey2, 25, 8);
         evok[26] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[8] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[26]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[8] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok10submit").click(function(){
@@ -3372,12 +3580,16 @@ function addEventListeners(){
         evok[28] = GetItemDropDownList();
         evokanswercorrect2[9] = CorrectAnswer(evok, evokanswerkey2, 28, 9);
         evok[29] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[9] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[29]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[9] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok11submit").click(function(){
@@ -3386,12 +3598,16 @@ function addEventListeners(){
         evok[31] = GetItemDropDownList();
         evokanswercorrect2[10] = CorrectAnswer(evok, evokanswerkey2, 31, 10);
         evok[32] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[10] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[32]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[10] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok12submit").click(function(){
@@ -3400,12 +3616,16 @@ function addEventListeners(){
         evok[34] = GetItemDropDownList();
         evokanswercorrect2[11] = CorrectAnswer(evok, evokanswerkey2, 34, 11);
         evok[35] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[11] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[35]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[11] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok13submit").click(function(){
@@ -3414,12 +3634,16 @@ function addEventListeners(){
         evok[37] = GetItemDropDownList();
         evokanswercorrect2[12] = CorrectAnswer(evok, evokanswerkey2, 37, 12);
         evok[38] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[12] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[38]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[12] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok14submit").click(function(){
@@ -3428,12 +3652,16 @@ function addEventListeners(){
         evok[40] = GetItemDropDownList();
         evokanswercorrect2[13] = CorrectAnswer(evok, evokanswerkey2, 40, 13);
         evok[41] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[13] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[41]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[13] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok15submit").click(function(){
@@ -3442,12 +3670,16 @@ function addEventListeners(){
         evok[43] = GetItemDropDownList();
         evokanswercorrect2[14] = CorrectAnswer(evok, evokanswerkey2, 43, 14);
         evok[44] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[14] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[44]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[14] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok16submit").click(function(){
@@ -3456,12 +3688,16 @@ function addEventListeners(){
         evok[46] = GetItemDropDownList();
         evokanswercorrect2[15] = CorrectAnswer(evok, evokanswerkey2, 46, 15);
         evok[47] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[15] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[47]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[15] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok17submit").click(function(){
@@ -3470,12 +3706,16 @@ function addEventListeners(){
         evok[49] = GetItemDropDownList();
         evokanswercorrect2[16] = CorrectAnswer(evok, evokanswerkey2, 49, 16);
         evok[50] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[16] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[50]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[16] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok18submit").click(function(){
@@ -3484,12 +3724,16 @@ function addEventListeners(){
         evok[52] = GetItemDropDownList();
         evokanswercorrect2[17] = CorrectAnswer(evok, evokanswerkey2, 52, 17);
         evok[53] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[17] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[53]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[17] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok19submit").click(function(){
@@ -3498,12 +3742,16 @@ function addEventListeners(){
         evok[55] = GetItemDropDownList();
         evokanswercorrect2[18] = CorrectAnswer(evok, evokanswerkey2, 55, 18);
         evok[56] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[18] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[56]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[18] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok20submit").click(function(){
@@ -3512,12 +3760,16 @@ function addEventListeners(){
         evok[58] = GetItemDropDownList();
         evokanswercorrect2[19] = CorrectAnswer(evok, evokanswerkey2, 58, 19);
         evok[59] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[19] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[59]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[19] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok21submit").click(function(){
@@ -3526,12 +3778,16 @@ function addEventListeners(){
         evok[61] = GetItemDropDownList();
         evokanswercorrect2[20] = CorrectAnswer(evok, evokanswerkey2, 61, 20);
         evok[62] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[21] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[62]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[21] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok22submit").click(function(){
@@ -3540,12 +3796,16 @@ function addEventListeners(){
         evok[64] = GetItemDropDownList();
         evokanswercorrect2[21] = CorrectAnswer(evok, evokanswerkey2, 64, 21);
         evok[65] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[21] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[65]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[21] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok23submit").click(function(){
@@ -3554,12 +3814,16 @@ function addEventListeners(){
         evok[67] = GetItemDropDownList();
         evokanswercorrect2[22] = CorrectAnswer(evok, evokanswerkey2, 67, 22);
         evok[68] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[22] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[68]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[22] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok24submit").click(function(){
@@ -3568,12 +3832,16 @@ function addEventListeners(){
         evok[70] = GetItemDropDownList();
         evokanswercorrect2[23] = CorrectAnswer(evok, evokanswerkey2, 70, 23);
         evok[71] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[23] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[71]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[23] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok25submit").click(function(){
@@ -3582,12 +3850,16 @@ function addEventListeners(){
         evok[73] = GetItemDropDownList();
         evokanswercorrect2[24] = CorrectAnswer(evok, evokanswerkey2, 73, 24);
         evok[74] = GetItemResponseTextArea();
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentcustomanswerkey, 0);
-        evokanswercorrect3[24] = CorrectOpenAnswer(agentcustomanswerkey, 0);
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[74]==""){
+            
+        }else{
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentcustomanswerkey, 0);
+            evokanswercorrect3[24] = CorrectOpenAnswer(agentcustomanswerkey, 0);
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok26submit").click(function(){
@@ -3602,90 +3874,130 @@ function addEventListeners(){
 
     $(".evok27submit").click(function(){
         evok[81] = GetItemResponseTextArea();
-        evokpro = UpdateProgressIndicator(evok);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        evokanswercorrect5[0] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[81]==""){
+            
+        }else{
+            evokpro = UpdateProgressIndicator(evok);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            evokanswercorrect5[0] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok28submit").click(function(){
         evok[82] = GetItemResponseTextArea();
-        evokpro = UpdateProgressIndicator(evok);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        evokanswercorrect5[1] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[82]==""){
+            
+        }else{
+            evokpro = UpdateProgressIndicator(evok);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            evokanswercorrect5[1] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok29submit").click(function(){
         evok[83] = GetItemResponseTextArea();
-        evokpro = UpdateProgressIndicator(evok);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        evokanswercorrect5[2] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[83]==""){
+            
+        }else{
+            evokpro = UpdateProgressIndicator(evok);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            evokanswercorrect5[2] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok30submit").click(function(){
         evok[84] = GetItemResponseTextArea();
-        evokpro = UpdateProgressIndicator(evok);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        evokanswercorrect5[3] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[84]==""){
+            
+        }else{
+            evokpro = UpdateProgressIndicator(evok);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            evokanswercorrect5[3] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok31submit").click(function(){
         evok[85] = GetItemResponseTextArea();
-        evokpro = UpdateProgressIndicator(evok);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        evokanswercorrect5[4] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[85]==""){
+            
+        }else{
+            evokpro = UpdateProgressIndicator(evok);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            evokanswercorrect5[4] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok32submit").click(function(){
         //evok[86], evok[87] = GetItemResponseMultiTextArea2();
         evok = evok.slice(0,86).concat(GetItemResponseMultiTextArea2());
         evok[88] = GetInlineRadioForm();
-        AgentDefault();
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[86]=="" || evok[87]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok33submit").click(function(){
         //evok[89], evok[90] = GetItemResponseMultiTextArea2();
         evok = evok.slice(0,89).concat(GetItemResponseMultiTextArea2());
         evok[91] = GetInlineRadioForm();
-        AgentDefault();
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[89]=="" || evok[90]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok34submit").click(function(){
         //evok[92], evok[93] = GetItemResponseMultiTextArea2();
         evok = evok.slice(0,92).concat(GetItemResponseMultiTextArea2());
-        AgentDefault();
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[92]=="" || evok[93]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok35submit").click(function(){
         //evok[94], evok[95] = GetItemResponseMultiTextArea2();
         evok = evok.slice(0,94).concat(GetItemResponseMultiTextArea2());
-        AgentDefault();
-        evokpro = UpdateProgressIndicator(evok);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(evok[94]=="" || evok[95]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            evokpro = UpdateProgressIndicator(evok);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".evok36submit").click(function(){
@@ -3699,58 +4011,93 @@ function addEventListeners(){
     $(".menu1submit").click(function(){
         //plan[0], plan[1], plan[2], plan[3], plan[4] = GetItemResponseMultiTextArea3();
         plan = GetItemResponseMultiTextArea3().slice();
-        AgentDefault();
-        planpro = UpdateProgressIndicator(plan);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(plan[0]=="" || plan[1]=="" ||plan[2]=="" ||plan[3]=="" ||plan[4]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            planpro = UpdateProgressIndicator(plan);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".menu2submit").click(function(){
         plan[5] = GetItemResponseTextArea();
-        AgentDefault();
-        planpro = UpdateProgressIndicator(plan);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(plan[5]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            planpro = UpdateProgressIndicator(plan);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".menu3submit").click(function(){
         plan[6] = GetItemResponseTextArea();
-        AgentDefault();
-        planpro = UpdateProgressIndicator(plan);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(plan[6]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            planpro = UpdateProgressIndicator(plan);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".menu4submit").click(function(){
         plan[7] = GetItemResponseTextArea();
-        AgentDefault();
-        planpro = UpdateProgressIndicator(plan);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(plan[7]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            planpro = UpdateProgressIndicator(plan);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".menu5submit").click(function(){
         plan[8] = GetItemResponseTextArea();
-        AgentDefault();
-        planpro = UpdateProgressIndicator(plan);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(plan[8]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            planpro = UpdateProgressIndicator(plan);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".menu6submit").click(function(){
         plan[9] = GetItemResponseTextArea();
-        AgentDefault();
-        planpro = UpdateProgressIndicator(plan);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(plan[9]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            planpro = UpdateProgressIndicator(plan);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     $(".menu7submit").click(function(){
         plan[10] = GetItemResponseTextArea();
-        AgentDefault();
-        planpro = UpdateProgressIndicator(plan);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(plan[10]==""){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+            AgentDefault();
+            planpro = UpdateProgressIndicator(plan);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
     // Full MI Practice
