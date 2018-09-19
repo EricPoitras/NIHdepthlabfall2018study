@@ -7,10 +7,18 @@ $(document).ready(function(){
     
     $("#responsesubmitb").click(function(){
         var response = $('textarea#message').val();
-        //console.log(response);
-        $(".responsecounsel").html("<em>Counselor: </em>"+response);
         
-        $("#responsedisplayarea").fadeIn("fast");
-        $("#responsewritearea").fadeOut("fast");
+        if(response==""){
+            $("#validationmessage").delay("slow").removeClass("invisiblecus");
+            $("#validationmessage").addClass("visiblecus");
+        }else{
+            $("#validationmessage").delay("slow").removeClass("visiblecus");
+            $("#validationmessage").addClass("invisiblecus");
+            //console.log(response);
+            $(".responsecounsel").html("<em>Counselor: </em>"+response);
+        
+            $("#responsedisplayarea").fadeIn("fast");
+            $("#responsewritearea").fadeOut("fast");
+        }
     })
 });
