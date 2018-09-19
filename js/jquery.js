@@ -35,14 +35,15 @@ $(document).ready(function(){
         window.open("modules/orientation/orientation.html","_self"); 
     });
     
+    /*
     $("#micard").click(function(){
         window.open("modules/mi.html","_self"); 
     });
-    
+    */
     $("#oarscard").click(function(){
         window.open("modules/oars.html","_self"); 
     });
-    
+    /*
     $("#focusingcard").click(function(){
         window.open("modules/focusing.html","_self"); 
     });
@@ -66,7 +67,7 @@ $(document).ready(function(){
      $("#fullmicard").click(function(){
         window.open("modules/mipractice.html","_self"); 
     });
-    
+    */
     // Sub-module page
     $(".list-group-navcus .list-group-item").hover(function(){
         $(this).addClass("activecus");
