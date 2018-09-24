@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+      
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../../css/stylesheet.css">
+
+    <title>NIH depth</title>
+  </head>
+  <body class="fontcus modulestep">
+    
+      <div class="container-fluid headerarea">
+          <div class="row">
+              <div class="col p-0">
+                  <nav class="navbar fontcus navcus1">
+                    <div class="col-10 p-0 offset-1 justify-content-around d-flex">
+                        <a class="navbar-brand" href="../../index.html">
+                        <img src="../../assets/Logov2.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                        NIH DEPTH: MI Training
+                        </a>
+                        <a href="../oars.html" class="pt-2 labelcus">&#60; Engaging with OARS</a>
+                        <a href="../../modules.html" class="pt-2 labelcus">Modules</a>
+                    </div>
+                  </nav>
+              </div>  
+          </div>
+      </div> <!-- End of Navbar -->  
+      <div class="container-fluid dashboardarea">
+          <div class="row">
+              
+              <!-- Toolbar -->
+              <div class="col-3 p-0 toolbararea">
+                <h5 class="p-3 toolbarhighlight">Instructions</h5>
+                <p class="p-3 text-justify">The following are a series of client statements followed by a question from the therapist. <strong>For each statement, rewrite the question the therapist asks as a reflection.</strong></p>
+                <h5 class="p-3 toolbarhighlight">Feedback</h5>
+                <div class="p-3" id="feedbackarea">
+                    <div id="reportarea" class="mb-3">
+                        <i class="fas fa-flag" data-toggle="tooltip" data-placement="top" title="Report an issue with the automated feedback"></i>
+                    </div>
+                    <div class="align-middle text-center">
+                        <i id="loading" class="fas fa-spinner fa-pulse"></i> 
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                      You reflected this statement. Here are a few examples of ways you could have responded with reflections:<br><em>Simple Reflections</em> might include:<br>Everyone says you have a problem<br>You don’t want to be here.<br><em>Complex Reflections</em> might include:<br>You don’t think you have a problem, and you came anyway.<br>If it were up to you, you wouldn’t be here. 
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                      You did not reflect this statement. Here are a few examples of ways you could have responded with reflections:<br><em>Simple Reflections</em> might include:<br>Everyone says you have a problem<br>You don’t want to be here.<br><em>Complex Reflections</em> might include:<br>You don’t think you have a problem, and you came anyway.<br>If it were up to you, you wouldn’t be here. 
+                    </div>
+                </div>
+              </div>
+              
+              <!-- Content -->
+              <div class="col contentarea">
+                     <div class="d-flex h-100 justify-content-left">
+                        
+                        <div id="discussion">
+                            <div class="card client">
+                                <div class="comment">
+                                    <div class="userpic"><img src="../../assets/avatar1.png"></div>
+                                    <p class="response"><em>Client: </em>It just seems like I don't have a lot of time to do it</p>
+                                </div>
+                            </div>
+                            <div id="responsedisplayarea" class="card therapist">
+                                <div class="comment">
+                                    <div class="userpic"><img src="../../assets/avatar2.png"></div>
+                                    <p class="responsecounsel"><em>Counselor: </em>Answer appears here.</p>
+                                </div>
+                            </div>
+                            <div id="responsewritearea" class="card therapist">
+                                <div class="comment">
+                                        <div class="form-group">
+                                            <label for="FormControlTextarea1">Question: What is the thing that’s stopping you?</label>
+                                            <textarea class="form-control" id="message" placeholder="Rewrite the question the therapist asks as a reflection..." rows="4"></textarea>
+                                        </div>
+                                        <a id="responsesubmitb" role="button" href="#" class="btn buttoncus primarycolcus text-white mt-3 oars50submit">Submit</a> 
+                                </div>
+                            </div>
+                        </div>
+                         
+                    </div>
+              </div>
+          </div>          
+      </div> <!-- End of Dashboard -->
+      <div class="container-fluid footerarea">
+          <div class="row">
+              <div class="col">
+                    <button type="submit" class="btn toolbarbutton">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                  
+                    <h5 class="toolbarlabel">Elaborating Reflections</h5>
+                    <div class="justify-content-around d-flex">
+                        <a role="button" href="../oars.html" class="btn buttoncus primarycolcus text-white">Previous</a>
+                        <a role="button" href="elaborationref2.html" class="btn buttoncus primarycolcus text-white">Next</a>
+                    </div>
+              </div>
+          </div>
+      </div> <!-- End of Navbar --> 
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- Replace jQuery slim library with full version: https://code.jquery.com/jquery/; You can also get it from W3school site: https://www.w3schools.com/jquery/jquery_get_started.asp-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- Script reference to your jquery code appears here -->
+    <script src="../../js/jquery.js"></script>  
+    <script src="../../js/feedbackresponse.js"></script>
+    <script src="../../data/CodeUtterances.js"></script> <!-- API to assess utterances -->
+    <script src="../../data/data.js"></script> <!-- Store textarea response -->
+    <script src="../../data/logdata.js"></script>
+    
+ <script type="text/javascript" src="/core/bypass/html5/js/xml2json.js"></script>       <script type="text/javascript" src="/core/bypass/html5/typescript/background/all.js"></script>       <script type="text/javascript" src="/core/bypass/html5/typescript/all.js"></script>       <script type="text/javascript" src="/core/bypass/html5/js/ep.js"></script>       <script type="text/javascript" src="/core/bypass/html5/js/epuserfunctions2.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script></body>
+</html>
