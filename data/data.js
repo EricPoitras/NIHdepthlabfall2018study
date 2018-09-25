@@ -95,7 +95,7 @@ var mi = [5];
 
 // OARS: var openorclose1, openorclose2, openorclose3, openorclose4, openorclose5, openorclose6, openorclose7, openorclose8, openorclose9, openorclose10; var opentoclose1, opentoclose2, opentoclose3, opentoclose4, opentoclose5, opentoclose6, opentoclose7, opentoclose8, opentoclose9, opentoclose10; var idstem1, idstem2, idstem3, idstem4, idstem5, idstem6, idstem7, idstem8, idstem9, idstem10, idstem11, idstem12, idstem13, idstem14, idstem15, idstem16, idstem17; var rephrase1, rephrase2; var crestem1, crestem2; var sil1, sil2, sil3, sil4, sil5, sil6, sil7;
 
-var oars = [57];
+var oars = [95];
 
 // Answer key OARS - 1. Closed; 2. Closed; 3. went off - open (google search metformin - medicaton in the past); 4. Open; 5. Closed;  6. delete; 7. open; 8. closed; 9. open; 10. open; https://docs.google.com/document/d/1QIHY4s-6Yafmh-VW40WcFctEJp6qbpIm-hCtPQlohBg/edit
 
@@ -119,6 +119,18 @@ var oarsanswerkey4 = ["reflection","reflection","else","reflection","else","else
 
 // Affirmations; items are open ended, scored as true and false
  var oarsanswercorrect6 = [6];
+
+// Reflections - identification section of the OARS module
+var oarsanswercorrect7 = [11];
+var oarsanswerkey7 = ["1","2","3","1","1","3","2","1","1","1","3","1"];
+
+// Reflections - categorization section of the OARS module
+var oarsanswercorrect8 = [11];
+var oarsanswerkey8 = ["simple","complex","complex","simple","complex","complex","simple","simple","complex","simple","simple","complex"];
+
+// Reflections -- elaboration section of the OARS module
+var oarsanswercorrect9 = [11];
+// Here they should make reflections
 
 // Focusing
 var target = [36];
@@ -489,7 +501,7 @@ function UpdateProgressMetrics(){
     perfol1mitakpro = fol1mitakpro/37*100;
     perfol2mitakpro = fol2mitakpro/37*100;
     permipro = mipro/6*100;
-    peroarspro = oarspro/58*100;
+    peroarspro = oarspro/97*100;
     pertarpro = tarpro/33*100;
     perevokpro = evokpro/100*100;
     perplanpro = planpro/11*100;
@@ -742,6 +754,22 @@ function GetItemRadioButton3(){
     return returnval;
 }
 
+// Get item response from radio button component - three items in OARS identification
+function GetItemRadioButton4(){
+    var val1 = document.getElementById("exampleRadios1").checked;
+    var val2 = document.getElementById("exampleRadios2").checked;
+    var val3 = document.getElementById("exampleRadios3").checked;
+    var returnval;
+    if(val1 === true){
+        returnval = "1";
+    }else if(val2 === true){
+        returnval = "2";
+    }else{
+        returnval = "3";
+    }
+    return returnval;
+}
+
 // Get item response from radio button - True/False component
 function GetItemTrueFalseButton(){
     var val1 = document.getElementById("radio1").checked;
@@ -792,6 +820,20 @@ function GetItemTrueFalseButton4(){
     }
     else{
         returnval = "else";
+    }
+    return returnval;
+}
+
+// Evoking true and false items
+function GetItemTrueFalseButton5(){
+    var val1 = document.getElementById("exampleRadios1").checked;
+    var val2 = document.getElementById("exampleRadios2").checked;
+    var returnval;
+    if(val1 === true){
+        returnval = "simple";
+    }
+    else{
+        returnval = "complex";
     }
     return returnval;
 }
@@ -2947,6 +2989,342 @@ function addEventListeners(){
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 11);
         oarsanswercorrect6[6] = CorrectOpenAnswer(agentanswerkey, 11);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars59submit").click(function(){
+        oars[58] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[0] = CorrectAnswer(oars,oarsanswerkey7,58,0);
+        AgentFeedback(oarsanswercorrect7,0);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars60submit").click(function(){
+        oars[59] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[1] = CorrectAnswer(oars,oarsanswerkey7,59,1);
+        AgentFeedback(oarsanswercorrect7,1);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars61submit").click(function(){
+        oars[60] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[2] = CorrectAnswer(oars,oarsanswerkey7,60,2);
+        AgentFeedback(oarsanswercorrect7,2);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars62submit").click(function(){
+        oars[61] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[3] = CorrectAnswer(oars,oarsanswerkey7,61,3);
+        AgentFeedback(oarsanswercorrect7,3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars63submit").click(function(){
+        oars[62] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[4] = CorrectAnswer(oars,oarsanswerkey7,62,4);
+        AgentFeedback(oarsanswercorrect7,4);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars64submit").click(function(){
+        oars[63] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[5] = CorrectAnswer(oars,oarsanswerkey7,63,5);
+        AgentFeedback(oarsanswercorrect7,5);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars65submit").click(function(){
+        oars[64] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[6] = CorrectAnswer(oars,oarsanswerkey7,64,6);
+        AgentFeedback(oarsanswercorrect7,6);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars66submit").click(function(){
+        oars[65] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[7] = CorrectAnswer(oars,oarsanswerkey7,65,7);
+        AgentFeedback(oarsanswercorrect7,7);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars67submit").click(function(){
+        oars[66] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[8] = CorrectAnswer(oars,oarsanswerkey7,66,8);
+        AgentFeedback(oarsanswercorrect7,8);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars68submit").click(function(){
+        oars[67] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[9] = CorrectAnswer(oars,oarsanswerkey7,67,9);
+        AgentFeedback(oarsanswercorrect7,9);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars69submit").click(function(){
+        oars[68] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[10] = CorrectAnswer(oars,oarsanswerkey7,68,10);
+        AgentFeedback(oarsanswercorrect7,10);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars70submit").click(function(){
+        oars[69] = GetItemRadioButton4();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect7[11] = CorrectAnswer(oars,oarsanswerkey7,69,11);
+        AgentFeedback(oarsanswercorrect7,11);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars71submit").click(function(){
+        oars[70] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[0] = CorrectAnswer(oars,oarsanswerkey8,70,0);
+        AgentFeedback(oarsanswercorrect8,0);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars72submit").click(function(){
+        oars[71] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[1] = CorrectAnswer(oars,oarsanswerkey8,71,1);
+        AgentFeedback(oarsanswercorrect8,1);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars73submit").click(function(){
+        oars[72] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[2] = CorrectAnswer(oars,oarsanswerkey8,72,2);
+        AgentFeedback(oarsanswercorrect8,2);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars74submit").click(function(){
+        oars[73] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[3] = CorrectAnswer(oars,oarsanswerkey8,73,3);
+        AgentFeedback(oarsanswercorrect8,3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars75submit").click(function(){
+        oars[74] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[4] = CorrectAnswer(oars,oarsanswerkey8,74,4);
+        AgentFeedback(oarsanswercorrect8,4);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars76submit").click(function(){
+        oars[75] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[5] = CorrectAnswer(oars,oarsanswerkey8,75,5);
+        AgentFeedback(oarsanswercorrect8,5);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars77submit").click(function(){
+        oars[76] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[6] = CorrectAnswer(oars,oarsanswerkey8,76,6);
+        AgentFeedback(oarsanswercorrect8,6);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars78submit").click(function(){
+        oars[77] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[7] = CorrectAnswer(oars,oarsanswerkey8,77,7);
+        AgentFeedback(oarsanswercorrect8,7);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars79submit").click(function(){
+        oars[78] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[8] = CorrectAnswer(oars,oarsanswerkey8,78,8);
+        AgentFeedback(oarsanswercorrect8,8);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars80submit").click(function(){
+        oars[79] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[9] = CorrectAnswer(oars,oarsanswerkey8,79,9);
+        AgentFeedback(oarsanswercorrect8,9);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars81submit").click(function(){
+        oars[80] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[10] = CorrectAnswer(oars,oarsanswerkey8,80,10);
+        AgentFeedback(oarsanswercorrect8,10);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars82submit").click(function(){
+        oars[81] = GetItemTrueFalseButton5();
+        oarspro = UpdateProgressIndicator(oars);
+        oarsanswercorrect8[11] = CorrectAnswer(oars,oarsanswerkey8,81,11);
+        AgentFeedback(oarsanswercorrect8,11);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars83submit").click(function(){
+        oars[82] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[0] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars84submit").click(function(){
+        oars[83] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[1] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars85submit").click(function(){
+        oars[84] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[2] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+    $(".oars86submit").click(function(){
+        oars[85] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[3] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+     $(".oars87submit").click(function(){
+        oars[86] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[4] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+     $(".oars88submit").click(function(){
+        oars[87] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[5] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+     $(".oars89submit").click(function(){
+        oars[88] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[6] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+     $(".oars90submit").click(function(){
+        oars[89] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[7] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+     $(".oars91submit").click(function(){
+        oars[90] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[8] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+     $(".oars92submit").click(function(){
+        oars[91] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[9] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+     $(".oars93submit").click(function(){
+        oars[92] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[10] = CorrectOpenAnswer(agentanswerkey, 3);
+        UpdateProgressMetrics();
+        UpdateLocalStorage();
+    });
+    
+     $(".oars94submit").click(function(){
+        oars[93] = GetItemResponseTextArea();
+        oarspro = UpdateProgressIndicator(oars);
+        CodeUtterances.codeTherapist();
+        AgentResponse(agentanswerkey, 3);
+        oarsanswercorrect9[11] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
     });
