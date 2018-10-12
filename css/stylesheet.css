@@ -359,6 +359,10 @@ nav.navcus1 a.labelcus:hover{
     margin-bottom: 30px;
 }
 
+.contentarea #discussion .longform{
+    margin-bottom: 75px;
+}
+
 .contentarea #discussion .userpic img{
     height: 50px;
     position: absolute;
