@@ -680,6 +680,37 @@ function GetItemResponseMultiTextArea4(){
     return [returnval1,returnval2,returnval3,returnval4];
 }
 
+function Validation(data){
+    if(data === "N/A"){
+        // Validation Negative - show message to user to submit response
+        $("#validationnegative").delay("slow").removeClass("invisiblecus");
+        $("#validationnegative").addClass("visiblecus");
+    }else{
+        // Validation Positive - show message to user to proceed to next step
+        $("#validationpositive").delay("slow").removeClass("invisiblecus");
+        $("#validationpositive").addClass("visiblecus");
+        // Hide the validation negative message
+        $("#validationnegative").removeClass("visiblecus");
+        $("#validationnegative").addClass("invisiblecus");
+        //Enable the next button
+        $("#next").removeClass("disabled");
+    }
+}
+
+function ValidationTextbox(){
+    $("#next").removeClass("disabled");
+}
+
+function ValidationNegative(){
+    $("#validationmessage").delay("slow").removeClass("invisiblecus");
+    $("#validationmessage").addClass("visiblecus");
+}
+
+function ValidationPositive(){
+    $("#validationmessage").delay("slow").removeClass("visiblecus");
+    $("#validationmessage").addClass("invisiblecus");
+}
+
 // Get item response from radio button component
 function GetItemRadioButton(){
     var val1 = document.getElementById("radio1").checked;
@@ -726,15 +757,18 @@ function GetItemRadioButton2(){
     else if(val4 === true){
         returnval = "4";
     }
-    else{
+    else if(val5 === true){
         returnval = "5";
+    }else{
+        returnval = "N/A";
     }
+    Validation(returnval);
     return returnval;
 }
 
 // Get item response from radio button component
 function GetItemRadioButton3(){
-    var val1 = document.getElementById("exampleRadios1").checked;
+     var val1 = document.getElementById("exampleRadios1").checked;
     var val2 = document.getElementById("exampleRadios2").checked;
     var val3 = document.getElementById("exampleRadios3").checked;
     var val4 = document.getElementById("exampleRadios4").checked;
@@ -748,9 +782,12 @@ function GetItemRadioButton3(){
     else if(val3 === true){
         returnval = "3";
     }
-    else{
+    else if(val4 === true){
         returnval = "4";
+    }else{
+        returnval = "N/A";
     }
+    Validation(returnval);
     return returnval;
 }
 
@@ -764,9 +801,12 @@ function GetItemRadioButton4(){
         returnval = "1";
     }else if(val2 === true){
         returnval = "2";
-    }else{
+    }else if(val3 === true){
         returnval = "3";
+    }else{
+        returnval = "N/A";
     }
+    Validation(returnval);
     return returnval;
 }
 
@@ -832,9 +872,12 @@ function GetItemTrueFalseButton5(){
     if(val1 === true){
         returnval = "simple";
     }
-    else{
+    else if(val2 === true){
         returnval = "complex";
+    }else{
+        returnval = "N/A";
     }
+    Validation(returnval);
     return returnval;
 }
 
@@ -907,6 +950,21 @@ function GetItemTrueFalseForm(){
     var val13 = document.getElementById("item13radio1").checked;
     var val14 = document.getElementById("item14radio2").checked;
     
+    var val1b = document.getElementById("item1radio1").checked;
+    var val2b = document.getElementById("item2radio1").checked;
+    var val3b = document.getElementById("item3radio1").checked;
+    var val4b = document.getElementById("item4radio2").checked;
+    var val5b = document.getElementById("item5radio1").checked;
+    var val6b = document.getElementById("item6radio1").checked;
+    var val7b = document.getElementById("item7radio1").checked;
+    var val8b = document.getElementById("item8radio2").checked;
+    var val9b = document.getElementById("item9radio1").checked;
+    var val10b = document.getElementById("item10radio2").checked;
+    var val11b = document.getElementById("item11radio1").checked;
+    var val12b = document.getElementById("item12radio1").checked;
+    var val13b = document.getElementById("item13radio2").checked;
+    var val14b = document.getElementById("item14radio1").checked;
+    
     var returnval1;
     var returnval2;
     var returnval3;
@@ -922,72 +980,127 @@ function GetItemTrueFalseForm(){
     var returnval13;
     var returnval14;
     
-    if(val1 == true){
+    if(val1 == false && val1b == false){
+        returnval1 = "N/A";
+    }
+    else if(val1 == true){
         returnval1 = "False (Correct)";
     }else{
         returnval1 = "True (Incorrect)";
     }
-    if(val2 == true){
+    
+    if(val2 == false && val2b == false){
+        returnval2 = "N/A";
+    }
+    else if(val2 == true){
         returnval2 = "False (Correct)";
     }else{
         returnval2 = "True (Incorrect)";
     }
-    if(val3 == true){
+    
+    if(val3 == false && val3b == false){
+        returnval3 = "N/A";
+    }
+    else if(val3 == true){
         returnval3 = "False (Correct)";
     }else{
         returnval3 = "True (Incorrect)";
     }
-    if(val4 == true){
+    
+    if(val4 == false && val4b == false){
+        returnval4 = "N/A";
+    }
+    else if(val4 == true){
         returnval4 = "True (Correct)";
     }else{
         returnval4 = "False (Incorrect)";
     }
-    if(val5 == true){
+    
+    if(val5 == false && val5b == false){
+        returnval5 = "N/A";
+    }
+    else if(val5 == true){
         returnval5 = "False (Correct)";
     }else{
         returnval5 = "True (Incorrect)";
     }
-    if(val6 == true){
+    
+    if(val6 == false && val6b == false){
+        returnval6 = "N/A";
+    }
+    else if(val6 == true){
         returnval6 = "False (Correct)";
     }else{
         returnval6 = "True (Incorrect)";
     }
-    if(val7 == true){
+    
+    if(val7 == false && val7b == false){
+        returnval7 = "N/A";
+    }
+    else if(val7 == true){
         returnval7 = "False (Correct)";
     }else{
         returnval7 = "True (Incorrect)";
     }
-    if(val8 == true){
+    
+    if(val8 == false && val8b == false){
+        returnval8 = "N/A";
+    }
+    else if(val8 == true){
         returnval8 = "True (Correct)";
     }else{
         returnval8 = "False (Incorrect)";
     }
-    if(val9 == true){
+    
+    if(val9 == false && val9b == false){
+        returnval9 = "N/A";
+    }
+    else if(val9 == true){
         returnval9 = "False (Correct)";
     }else{
         returnval9 = "True (Incorrect)";
     }
-    if(val10 == true){
+    
+    if(val10 == false && val10b == false){
+        returnval10 = "N/A";
+    }
+    else if(val10 == true){
         returnval10 = "True (Correct)";
     }else{
         returnval10 = "False (Incorrect)";
     }
-    if(val11 == true){
+    
+    if(val11 == false && val11b == false){
+        returnval11 = "N/A";
+    }
+    else if(val11 == true){
         returnval11 = "False (Correct)";
     }else{
         returnval11 = "True (Incorrect)";
     }
-    if(val12 == true){
+    
+    if(val12 == false && val12b == false){
+        returnval12 = "N/A";
+    }
+    else if(val12 == true){
         returnval12 = "False (Correct)";
     }else{
         returnval12 = "True (Incorrect)";
     }
-    if(val13 == true){
+    
+    if(val13 == false && val13b == false){
+        returnval13 = "N/A";
+    }
+    else if(val13 == true){
         returnval13 = "True (Correct)";
     }else{
         returnval13 = "False (Incorrect)";
     }
-    if(val14 == true){
+    
+    if(val14 == false && val14b == false){
+        returnval14 = "N/A";
+    }
+    else if(val14 == true){
         returnval14 = "False (Correct)";
     }else{
         returnval14 = "True (Incorrect)";
@@ -2111,10 +2224,15 @@ function addEventListeners(){
     $(".basmikat1submit").click(function(){
         //basmit[0], basmit[1], basmit[2], basmit[3], basmit[4], basmit[5], basmit[6], basmit[7], basmit[8], basmit[9], basmit[10], basmit[11], basmit[12], basmit[13] = GetItemTrueFalseForm();
         basmit = GetItemTrueFalseForm().slice();
+ if(basmit[0]=="N/A" || basmit[1]=="N/A" || basmit[2]=="N/A" || basmit[3]=="N/A" || basmit[4]=="N/A" || basmit[5]=="N/A" || basmit[6]=="N/A" || basmit[7]=="N/A" || basmit[8]=="N/A" || basmit[9]=="N/A" || basmit[10]=="N/A" || basmit[11]=="N/A" || basmit[12]=="N/A" || basmit[13]=="N/A"){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
 
         basmitakpro = UpdateProgressIndicator(basmit);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
 
     $(".basmikat2submit").click(function(){
@@ -2186,9 +2304,15 @@ function addEventListeners(){
     $(".posmikat1submit").click(function(){
         //posmit[0], posmit[1], posmit[2], posmit[3], posmit[4], posmit[5], posmit[6], posmit[7], posmit[8], posmit[9], posmit[10], posmit[11], posmit[12], posmit[13] = GetItemTrueFalseForm();
         posmit = GetItemTrueFalseForm().slice();
+        if(posmit[0]=="N/A" || posmit[1]=="N/A" || posmit[2]=="N/A" || posmit[3]=="N/A" || posmit[4]=="N/A" || posmit[5]=="N/A" || posmit[6]=="N/A" || posmit[7]=="N/A" || posmit[8]=="N/A" || posmit[9]=="N/A" || posmit[10]=="N/A" || posmit[11]=="N/A" || posmit[12]=="N/A" || posmit[13]=="N/A"){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
+
         posmitakpro = UpdateProgressIndicator(posmit);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
 
     $(".posmikat2submit").click(function(){
@@ -2259,9 +2383,14 @@ function addEventListeners(){
     $(".fol1mikat1submit").click(function(){
         //fol1mit[0], fol1mit[1], fol1mit[2], fol1mit[3], fol1mit[4], fol1mit[5], fol1mit[6], fol1mit[7], fol1mit[8], fol1mit[9], fol1mit[10], fol1mit[11], fol1mit[12], fol1mit[13] = GetItemTrueFalseForm();
         fol1mit = GetItemTrueFalseForm().slice();
+        if(fol1mit[0]=="N/A" || fol1mit[1]=="N/A" || fol1mit[2]=="N/A" || fol1mit[3]=="N/A" || fol1mit[4]=="N/A" || fol1mit[5]=="N/A" || fol1mit[6]=="N/A" || fol1mit[7]=="N/A" || fol1mit[8]=="N/A" || fol1mit[9]=="N/A" || fol1mit[10]=="N/A" || fol1mit[11]=="N/A" || fol1mit[12]=="N/A" || fol1mit[13]=="N/A"){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
         fol1mitakpro = UpdateProgressIndicator(fol1mit);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
 
     $(".fol1mikat2submit").click(function(){
@@ -2331,9 +2460,14 @@ function addEventListeners(){
     $(".fol2mikat1submit").click(function(){
         //fol2mit[0], fol2mit[1], fol2mit[2], fol2mit[3], fol2mit[4], fol2mit[5], fol2mit[6], fol2mit[7], fol2mit[8], fol2mit[9], fol2mit[10], fol2mit[11], fol2mit[12], fol2mit[13] = GetItemTrueFalseForm();
         fol2mit = GetItemTrueFalseForm().slice();
+        if(fol2mit[0]=="N/A" || fol2mit[1]=="N/A" || fol2mit[2]=="N/A" || fol2mit[3]=="N/A" || fol2mit[4]=="N/A" || fol2mit[5]=="N/A" || fol2mit[6]=="N/A" || fol2mit[7]=="N/A" || fol2mit[8]=="N/A" || fol2mit[9]=="N/A" || fol2mit[10]=="N/A" || fol2mit[11]=="N/A" || fol2mit[12]=="N/A" || fol2mit[13]=="N/A"){
+            ValidationNegative();
+        }else{
+            ValidationPositive();
         fol2mitakpro = UpdateProgressIndicator(fol2mit);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
 
     $(".fol2mikat2submit").click(function(){
@@ -2995,338 +3129,495 @@ function addEventListeners(){
     
     $(".oars59submit").click(function(){
         oars[58] = GetItemRadioButton4();
-        oarspro = UpdateProgressIndicator(oars);
-        oarsanswercorrect7[0] = CorrectAnswer(oars,oarsanswerkey7,58,0);
-        AgentFeedback(oarsanswercorrect7,0);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[58]=="N/A"){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            oarsanswercorrect7[0] = CorrectAnswer(oars,oarsanswerkey7,58,0);
+            AgentFeedback(oarsanswercorrect7,0);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
     
     $(".oars60submit").click(function(){
         oars[59] = GetItemRadioButton4();
+        if(oars[59]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[1] = CorrectAnswer(oars,oarsanswerkey7,59,1);
         AgentFeedback(oarsanswercorrect7,1);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars61submit").click(function(){
         oars[60] = GetItemRadioButton4();
+        if(oars[60]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[2] = CorrectAnswer(oars,oarsanswerkey7,60,2);
         AgentFeedback(oarsanswercorrect7,2);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars62submit").click(function(){
         oars[61] = GetItemRadioButton4();
+        if(oars[61]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[3] = CorrectAnswer(oars,oarsanswerkey7,61,3);
         AgentFeedback(oarsanswercorrect7,3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars63submit").click(function(){
         oars[62] = GetItemRadioButton4();
+        if(oars[62]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[4] = CorrectAnswer(oars,oarsanswerkey7,62,4);
         AgentFeedback(oarsanswercorrect7,4);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars64submit").click(function(){
         oars[63] = GetItemRadioButton4();
+        if(oars[63]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[5] = CorrectAnswer(oars,oarsanswerkey7,63,5);
         AgentFeedback(oarsanswercorrect7,5);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars65submit").click(function(){
         oars[64] = GetItemRadioButton4();
+        if(oars[64]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[6] = CorrectAnswer(oars,oarsanswerkey7,64,6);
         AgentFeedback(oarsanswercorrect7,6);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars66submit").click(function(){
         oars[65] = GetItemRadioButton4();
+        if(oars[65]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[7] = CorrectAnswer(oars,oarsanswerkey7,65,7);
         AgentFeedback(oarsanswercorrect7,7);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars67submit").click(function(){
         oars[66] = GetItemRadioButton4();
+        if(oars[66]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[8] = CorrectAnswer(oars,oarsanswerkey7,66,8);
         AgentFeedback(oarsanswercorrect7,8);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars68submit").click(function(){
         oars[67] = GetItemRadioButton4();
+        if(oars[67]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[9] = CorrectAnswer(oars,oarsanswerkey7,67,9);
         AgentFeedback(oarsanswercorrect7,9);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars69submit").click(function(){
         oars[68] = GetItemRadioButton4();
+        if(oars[68]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[10] = CorrectAnswer(oars,oarsanswerkey7,68,10);
         AgentFeedback(oarsanswercorrect7,10);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars70submit").click(function(){
         oars[69] = GetItemRadioButton4();
+        if(oars[69]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect7[11] = CorrectAnswer(oars,oarsanswerkey7,69,11);
         AgentFeedback(oarsanswercorrect7,11);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars71submit").click(function(){
         oars[70] = GetItemTrueFalseButton5();
+        if(oars[70]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[0] = CorrectAnswer(oars,oarsanswerkey8,70,0);
         AgentFeedback(oarsanswercorrect8,0);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars72submit").click(function(){
         oars[71] = GetItemTrueFalseButton5();
+        if(oars[71]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[1] = CorrectAnswer(oars,oarsanswerkey8,71,1);
         AgentFeedback(oarsanswercorrect8,1);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars73submit").click(function(){
         oars[72] = GetItemTrueFalseButton5();
+        if(oars[72]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[2] = CorrectAnswer(oars,oarsanswerkey8,72,2);
         AgentFeedback(oarsanswercorrect8,2);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars74submit").click(function(){
         oars[73] = GetItemTrueFalseButton5();
+        if(oars[73]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[3] = CorrectAnswer(oars,oarsanswerkey8,73,3);
         AgentFeedback(oarsanswercorrect8,3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars75submit").click(function(){
         oars[74] = GetItemTrueFalseButton5();
+        if(oars[74]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[4] = CorrectAnswer(oars,oarsanswerkey8,74,4);
         AgentFeedback(oarsanswercorrect8,4);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars76submit").click(function(){
         oars[75] = GetItemTrueFalseButton5();
+        if(oars[75]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[5] = CorrectAnswer(oars,oarsanswerkey8,75,5);
         AgentFeedback(oarsanswercorrect8,5);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars77submit").click(function(){
         oars[76] = GetItemTrueFalseButton5();
+        if(oars[76]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[6] = CorrectAnswer(oars,oarsanswerkey8,76,6);
         AgentFeedback(oarsanswercorrect8,6);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars78submit").click(function(){
         oars[77] = GetItemTrueFalseButton5();
+        if(oars[77]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[7] = CorrectAnswer(oars,oarsanswerkey8,77,7);
         AgentFeedback(oarsanswercorrect8,7);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars79submit").click(function(){
         oars[78] = GetItemTrueFalseButton5();
+        if(oars[78]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[8] = CorrectAnswer(oars,oarsanswerkey8,78,8);
         AgentFeedback(oarsanswercorrect8,8);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars80submit").click(function(){
         oars[79] = GetItemTrueFalseButton5();
+        if(oars[79]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[9] = CorrectAnswer(oars,oarsanswerkey8,79,9);
         AgentFeedback(oarsanswercorrect8,9);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars81submit").click(function(){
         oars[80] = GetItemTrueFalseButton5();
+        if(oars[80]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[10] = CorrectAnswer(oars,oarsanswerkey8,80,10);
         AgentFeedback(oarsanswercorrect8,10);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars82submit").click(function(){
         oars[81] = GetItemTrueFalseButton5();
+        if(oars[81]=="N/A"){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         oarsanswercorrect8[11] = CorrectAnswer(oars,oarsanswerkey8,81,11);
         AgentFeedback(oarsanswercorrect8,11);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        }
     });
     
     $(".oars83submit").click(function(){
         oars[82] = GetItemResponseTextArea();
-        oarspro = UpdateProgressIndicator(oars);
-        CodeUtterances.codeTherapist();
-        AgentResponse(agentanswerkey, 3);
-        oarsanswercorrect9[0] = CorrectOpenAnswer(agentanswerkey, 3);
-        UpdateProgressMetrics();
-        UpdateLocalStorage();
+        if(oars[82]==""){
+            
+        }else{
+            oarspro = UpdateProgressIndicator(oars);
+            CodeUtterances.codeTherapist();
+            AgentResponse(agentanswerkey, 3);
+            oarsanswercorrect9[0] = CorrectOpenAnswer(agentanswerkey, 3);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+            ValidationTextbox();
+        }
+        
     });
     
     $(".oars84submit").click(function(){
         oars[83] = GetItemResponseTextArea();
+        if(oars[83]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[1] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
     $(".oars85submit").click(function(){
         oars[84] = GetItemResponseTextArea();
+        if(oars[84]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[2] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
     $(".oars86submit").click(function(){
         oars[85] = GetItemResponseTextArea();
+        if(oars[85]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[3] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
      $(".oars87submit").click(function(){
         oars[86] = GetItemResponseTextArea();
+        if(oars[86]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[4] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
      $(".oars88submit").click(function(){
         oars[87] = GetItemResponseTextArea();
+        if(oars[87]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[5] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
      $(".oars89submit").click(function(){
         oars[88] = GetItemResponseTextArea();
+        if(oars[88]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[6] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
      $(".oars90submit").click(function(){
         oars[89] = GetItemResponseTextArea();
+        if(oars[89]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[7] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
      $(".oars91submit").click(function(){
         oars[90] = GetItemResponseTextArea();
+        if(oars[90]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[8] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
      $(".oars92submit").click(function(){
         oars[91] = GetItemResponseTextArea();
+        if(oars[91]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[9] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
      $(".oars93submit").click(function(){
         oars[92] = GetItemResponseTextArea();
+        if(oars[92]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[10] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
     
      $(".oars94submit").click(function(){
         oars[93] = GetItemResponseTextArea();
+        if(oars[93]==""){
+            
+        }else{
         oarspro = UpdateProgressIndicator(oars);
         CodeUtterances.codeTherapist();
         AgentResponse(agentanswerkey, 3);
         oarsanswercorrect9[11] = CorrectOpenAnswer(agentanswerkey, 3);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+        ValidationTextbox();
+        }
     });
 
     // Focusing
