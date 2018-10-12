@@ -46,14 +46,28 @@
                 <p class="p-3 text-justify">The following are potential responses to client statements. After reading each client statement <strong>pick the therapist statement that is a reflection.</strong></p>
                 
                 <h5 class="p-3 toolbarhighlight">Feedback</h5>
+                <!-- Control Condition
                 <div class="p-3" id="feedbackarea">
                     <div class="alert alert-success" role="alert">
-                      Your selection is correct. For example, you could say the following reflection after that stem, “Sounds like you are having a rough time right now.” 
+                      You correctly identified the reflection.
                     </div>
                     <div class="alert alert-danger" role="alert">
-                      Your selection is incorrect. For example, you could say the following reflection after that stem, “Sounds like you are having a rough time right now.”
+                      This therapist response is not a reflection.
                     </div>
                 </div>
+                -->
+                <!-- Treatment Condition-->
+                <div class="p-3" id="feedbackarea">
+                    <div class="alert alert-success" role="alert">
+                      You correctly identified the reflection. “You’re just worn out” is a reflective statement.  The therapist is communicating back to the client that they heard what they said, and amplifying it slightly. The other two statements are questions asking about other symptoms or details. There are many other potential reflections, “You’re just worn out”, “You didn’t sleep much”, etc. They reflections may very in the extent to which the therapist stays close to exactly what the client sad or makes guesses about what might be going on.
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                      This therapist response is not a reflection. “You’re just worn out” is a reflective statement.  The therapist is communicating back to the client that they heard what they said, and amplifying it slightly. The other two statements are questions asking about other symptoms or details. There are many other potential reflections, “You’re just worn out”, “You didn’t sleep much”, etc. They reflections may very in the extent to which the therapist stays close to exactly what the client sad or makes guesses about what might be going on.
+                    </div>
+                </div>
+                
+                  
+                  
               </div>
               
               <!-- Content -->
@@ -88,7 +102,12 @@
                                         Are you taking your medication
                                       </label>
                                     </div>
-                                    
+                                    <div id="validationpositive" class="alert alert-success invisiblecus" role="alert">
+                                            Thank you for submitting your response, please proceed to the next step.
+                                    </div>
+                                    <div id="validationnegative" class="alert alert-danger invisiblecus" role="alert">
+                                        Please select an option to submit your response.
+                                    </div>
                                     <a id="responsesubmitb" role="button" href="#" class="btn buttoncus primarycolcus text-white mt-3 oars59submit">Submit</a> 
                                 </div>
                             </div>
@@ -108,7 +127,7 @@
                     <h5 class="toolbarlabel">Identifying Reflections</h5>
                     <div class="justify-content-around d-flex">
                         <a role="button" href="../oars.html" class="btn buttoncus primarycolcus text-white">Previous</a>
-                        <a role="button" href="identificationref2.html" class="btn buttoncus primarycolcus text-white">Next</a>
+                        <a id="next" role="button" href="identificationref2.html" class="disabled btn buttoncus primarycolcus text-white">Next</a>
                     </div>
               </div>
           </div>
@@ -119,7 +138,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- Script reference to your jquery code appears here -->
     <script src="../../js/jquery.js"></script> 
-      <script src="../../js/feedbackresponse.js"></script>
+      <!--<script src="../../js/feedbackresponse.js"></script>-->
       <script src="../../data/data.js"></script> <!-- Store text responses -->
       <script src="../../data/logdata.js"></script>
       

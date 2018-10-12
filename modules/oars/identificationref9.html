@@ -46,14 +46,26 @@
                 <p class="p-3 text-justify">The following are potential responses to client statements. After reading each client statement <strong>pick the therapist statement that is a reflection.</strong></p>
                 
                 <h5 class="p-3 toolbarhighlight">Feedback</h5>
+                <!-- Control Condition
                 <div class="p-3" id="feedbackarea">
                     <div class="alert alert-success" role="alert">
-                      Your selection is correct. For example, you could say the following reflection after that stem, “Sounds like you are having a rough time right now.” 
+                      You correctly identified the reflection. 
                     </div>
                     <div class="alert alert-danger" role="alert">
-                      Your selection is incorrect. For example, you could say the following reflection after that stem, “Sounds like you are having a rough time right now.”
+                      This therapist response is not a reflection.
                     </div>
                 </div>
+                -->
+                <!-- Treatment Condition-->
+                <div class="p-3" id="feedbackarea">
+                    <div class="alert alert-success" role="alert">
+                      You correctly identified the reflection. “You’re comfortable here, it is hard to imagine being happy somewhere else” is a reflection because it makes the logical connection, intrinsic to the client’s statement, that if the client doesn’t want to move, they must be comfortable with their current living situation. Answer B is an open question and Answer C is a reframe or giving of the therapist’s opinion. Other reflections may have re-articulated the negative feelings surrounding moving or reflected the general distaste people have for change.
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                      This therapist response is not a reflection. “You’re comfortable here, it is hard to imagine being happy somewhere else” is a reflection because it makes the logical connection, intrinsic to the client’s statement, that if the client doesn’t want to move, they must be comfortable with their current living situation. Answer B is an open question and Answer C is a reframe or giving of the therapist’s opinion. Other reflections may have re-articulated the negative feelings surrounding moving or reflected the general distaste people have for change.
+                    </div>
+                </div>
+                
               </div>
               
               <!-- Content -->
@@ -88,7 +100,12 @@
                                         Moving can be fun, its like a whole new adventure
                                       </label>
                                     </div>
-                                    
+                                    <div id="validationpositive" class="alert alert-success invisiblecus" role="alert">
+                                            Thank you for submitting your response, please proceed to the next step.
+                                    </div>
+                                    <div id="validationnegative" class="alert alert-danger invisiblecus" role="alert">
+                                        Please select an option to submit your response.
+                                    </div>
                                     <a id="responsesubmitb" role="button" href="#" class="btn buttoncus primarycolcus text-white mt-3 oars67submit">Submit</a> 
                                 </div>
                             </div>
@@ -108,7 +125,7 @@
                     <h5 class="toolbarlabel">Identifying Reflections</h5>
                     <div class="justify-content-around d-flex">
                         <a role="button" href="identificationref8.html" class="btn buttoncus primarycolcus text-white">Previous</a>
-                        <a role="button" href="identificationref10.html" class="btn buttoncus primarycolcus text-white">Next</a>
+                        <a id="next" role="button" href="identificationref10.html" class="disabled btn buttoncus primarycolcus text-white">Next</a>
                     </div>
               </div>
           </div>
@@ -119,7 +136,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- Script reference to your jquery code appears here -->
     <script src="../../js/jquery.js"></script> 
-      <script src="../../js/feedbackresponse.js"></script>
+     <!-- <script src="../../js/feedbackresponse.js"></script>-->
       <script src="../../data/data.js"></script> <!-- Store text responses -->
       <script src="../../data/logdata.js"></script>
  <script type="text/javascript" src="/core/bypass/html5/js/xml2json.js"></script>       <script type="text/javascript" src="/core/bypass/html5/typescript/background/all.js"></script>       <script type="text/javascript" src="/core/bypass/html5/typescript/all.js"></script>       <script type="text/javascript" src="/core/bypass/html5/js/ep.js"></script>       <script type="text/javascript" src="/core/bypass/html5/js/epuserfunctions2.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script></body>

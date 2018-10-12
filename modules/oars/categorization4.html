@@ -46,14 +46,27 @@
                 <p class="p-3 text-justify">Below you will be provided with a series of client statements and therapist reflections. <strong>Please categorize whether these reflections are simple or complex.</strong></p>
                 
                 <h5 class="p-3 toolbarhighlight">Feedback</h5>
+                <!-- Control Condition
                 <div class="p-3" id="feedbackarea">
                     <div class="alert alert-success" role="alert">
-                      Your selection is correct. For example, you could say the following reflection after that stem, “Sounds like you are having a rough time right now.” 
+                      You correctly identified this statement as a simple reflection.  
                     </div>
                     <div class="alert alert-danger" role="alert">
-                      Your selection is incorrect. For example, you could say the following reflection after that stem, “Sounds like you are having a rough time right now.”
+                      This statement is not a complex reflection.
                     </div>
-                </div>
+                </div>  
+                -->
+                  
+                <!-- Treatment Condition -->
+                <div class="p-3" id="feedbackarea">
+                    <div class="alert alert-success" role="alert">
+                      You correctly identified this statement as a simple reflection. “Your tired of feeling lazy” is a simple reflection because it does not add meaningful content to the client’s statement. A complex reflection may have connected the statement to identity (“That’s not who you are”) or inserted emotion (“Being lazy makes you feel bad”), among other possibilities.   
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                      This statement is not a complex reflection. “Your tired of feeling lazy” is a simple reflection because it does not add meaningful content to the client’s statement. A complex reflection may have connected the statement to identity (“That’s not who you are”) or inserted emotion (“Being lazy makes you feel bad”), among other possibilities. 
+                    </div>
+                </div>  
+                
               </div>
               
               <!-- Content -->
@@ -90,7 +103,12 @@
                                       </label>
                                     </div>
                                    
-                                    
+                                    <div id="validationpositive" class="alert alert-success invisiblecus" role="alert">
+                                            Thank you for submitting your response, please proceed to the next step.
+                                    </div>
+                                    <div id="validationnegative" class="alert alert-danger invisiblecus" role="alert">
+                                        Please select an option to submit your response.
+                                    </div>
                                     <a id="responsesubmitb" role="button" href="#" class="btn buttoncus primarycolcus text-white mt-3 oars74submit">Submit</a> 
                                 </div>
                             </div>
@@ -110,7 +128,7 @@
                     <h5 class="toolbarlabel">Categorizing Reflections</h5>
                     <div class="justify-content-around d-flex">
                         <a role="button" href="categorization3.html" class="btn buttoncus primarycolcus text-white">Previous</a>
-                        <a role="button" href="categorization5.html" class="btn buttoncus primarycolcus text-white">Next</a>
+                        <a id="next" role="button" href="categorization5.html" class="disabled btn buttoncus primarycolcus text-white">Next</a>
                     </div>
               </div>
           </div>
@@ -121,7 +139,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- Script reference to your jquery code appears here -->
     <script src="../../js/jquery.js"></script> 
-      <script src="../../js/feedbackresponse.js"></script>
+      <!--<script src="../../js/feedbackresponse.js"></script>-->
       <script src="../../data/data.js"></script> <!-- Store text responses -->
       <script src="../../data/logdata.js"></script>
  <script type="text/javascript" src="/core/bypass/html5/js/xml2json.js"></script>       <script type="text/javascript" src="/core/bypass/html5/typescript/background/all.js"></script>       <script type="text/javascript" src="/core/bypass/html5/typescript/all.js"></script>       <script type="text/javascript" src="/core/bypass/html5/js/ep.js"></script>       <script type="text/javascript" src="/core/bypass/html5/js/epuserfunctions2.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script></body>

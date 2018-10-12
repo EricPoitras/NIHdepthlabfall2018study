@@ -45,20 +45,39 @@
                 <h5 class="p-3 toolbarhighlight">Instructions</h5>
                 <p class="p-3 text-justify">The following are a series of client statements followed by a question from the therapist. <strong>For each statement, rewrite the question the therapist asks as a reflection.</strong></p>
                 <h5 class="p-3 toolbarhighlight">Feedback</h5>
+                <!-- Control Condition   
                 <div class="p-3" id="feedbackarea">
-                    <div id="reportarea"  class="mb-3">
+                    <div id="reportarea" class="mb-3">
                         <i class="fas fa-flag" data-toggle="tooltip" data-placement="top" title="Report an issue with the automated feedback"></i>
                     </div>
                     <div class="align-middle text-center">
                         <i id="loading" class="fas fa-spinner fa-pulse"></i> 
                     </div>
                     <div class="alert alert-success" role="alert">
-                      You reflected this statement. Here are a few examples of ways you could have responded with reflections:<br><em>Simple Reflections</em> might include:<br>Everyone says you have a problem<br>You don’t want to be here.<br><em>Complex Reflections</em> might include:<br>You don’t think you have a problem, and you came anyway.<br>If it were up to you, you wouldn’t be here. 
+                      Our computer model thinks this was a reflection! Good work. Of course, it's just a machine, so click on the flag above if you think we made an error. 
                     </div>
                     <div class="alert alert-danger" role="alert">
-                      You did not reflect this statement. Here are a few examples of ways you could have responded with reflections:<br><em>Simple Reflections</em> might include:<br>Everyone says you have a problem<br>You don’t want to be here.<br><em>Complex Reflections</em> might include:<br>You don’t think you have a problem, and you came anyway.<br>If it were up to you, you wouldn’t be here. 
+                      Our computer does not think this statement was a reflection. Bummer. Of course, its just a machine, so click on the flag above if you think we made an error. 
                     </div>
                 </div>
+                -->
+                
+                <!-- Treatment Condition  --> 
+                <div class="p-3" id="feedbackarea">
+                    <div id="reportarea" class="mb-3">
+                        <i class="fas fa-flag" data-toggle="tooltip" data-placement="top" title="Report an issue with the automated feedback"></i>
+                    </div>
+                    <div class="align-middle text-center">
+                        <i id="loading" class="fas fa-spinner fa-pulse"></i> 
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                      Our computer model thinks this was a reflection! Good work. Of course, it's just a machine, so click on the flag above if you think we made an error. In case it's helpful, here are a few examples of other ways you could have responded with reflections:<br>A Reflection might be<br>That sounds uncomfortable, or...<br>Thoughts were running wild
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                      Our computer does not think this statement was a reflection. Bummer. Of course, its just a machine, so click on the flag above if you think we made an error. In case it's helpful, here are a few examples of other ways you could have responded with reflections:<br>A Reflection might be<br>That sounds uncomfortable, or...<br>Thoughts were running wild
+                    </div>
+                </div>
+                
               </div>
               
               <!-- Content -->
@@ -84,6 +103,9 @@
                                             <label for="FormControlTextarea1">Question: What sort of things?</label>
                                             <textarea class="form-control" id="message" placeholder="Rewrite the question the therapist asks as a reflection..." rows="4"></textarea>
                                         </div>
+                                        <div id="validationmessage" class="alert alert-success invisiblecus" role="alert">
+                                            Please write a response to the client before moving to the next step.
+                                        </div>
                                         <a id="responsesubmitb" role="button" href="#" class="btn buttoncus primarycolcus text-white mt-3 oars87submit">Submit</a> 
                                 </div>
                             </div>
@@ -103,7 +125,7 @@
                     <h5 class="toolbarlabel">Elaborating Reflections</h5>
                     <div class="justify-content-around d-flex">
                         <a role="button" href="elaborationref4.html" class="btn buttoncus primarycolcus text-white">Previous</a>
-                        <a role="button" href="elaborationref6.html" class="btn buttoncus primarycolcus text-white">Next</a>
+                        <a id="next" role="button" href="elaborationref6.html" class="disabled btn buttoncus primarycolcus text-white">Next</a>
                     </div>
               </div>
           </div>
