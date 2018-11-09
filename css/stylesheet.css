@@ -28,6 +28,14 @@ White #F8F8F8   CLEAN #DFDCE3
     text-align: left !important;
 }
 
+div.toolbararea .p-3{
+    font-size: 1.1rem !important;
+}
+
+div.contentarea .alert{
+    font-size: 1.1rem !important;
+}
+
 .fontcus{
     font-family: 'Helvetica', sans-serif;
 }
@@ -344,6 +352,7 @@ nav.navcus1 a.labelcus:hover{
 .contentarea #discussion{
     margin-bottom: 50px;
     height: 80vh;
+     width: 800px;
 }
 
 .contentarea #discussion .client{
