@@ -15,7 +15,7 @@ WebConstants = {
 CodeUtterances = {
     linechart:null,
     currServer: "https://sri.utah.edu/psychtest/",
-    currFile: "modeltest.jsp",
+    currFile: "modeltestdepth.jsp",
     currentData:{},
 
     getUrl:function(){
