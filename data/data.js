@@ -157,11 +157,15 @@ var plan = [10];
 // Full MI Practice
 var fullmi = [0];
 
+// Lab Evaluation - Orientation Module
+var orient = [1];
+var orientanswerkey = ["3"];
+var orientanswercorrect = [1]; 
 
 // Progress Indicators for each module - percentage completion rate
 
-var baspro, pospro, fol1pro, fol2pro, bashrqpro, poshrqpro, fol1hrqpro, fol2hrqpro, basmitakpro, posmitakpro, fol1mitakpro, fol2mitakpro, mipro, oarspro, tarpro, evokpro, planpro, fullmipro;
-var perbaspro, perpospro, perfol1pro, perfol2pro, perbashrqpro, perposhrqpro, perfol1hrqpro, perfol2hrqpro, perbasmitakpro, perposmitakpro, perfol1mitakpro, perfol2mitakpro, permipro, peroarspro, pertarpro, perevokpro, perplanpro, perfullmipro;
+var baspro, pospro, fol1pro, fol2pro, bashrqpro, poshrqpro, fol1hrqpro, fol2hrqpro, basmitakpro, posmitakpro, fol1mitakpro, fol2mitakpro, mipro, oarspro, tarpro, evokpro, planpro, fullmipro, orientpro;
+var perbaspro, perpospro, perfol1pro, perfol2pro, perbashrqpro, perposhrqpro, perfol1hrqpro, perfol2hrqpro, perbasmitakpro, perposmitakpro, perfol1mitakpro, perfol2mitakpro, permipro, peroarspro, pertarpro, perevokpro, perplanpro, perfullmipro, perorientpro;
 
 // Percentage score of correct responses per skill
 var affirmcount, reflectcount, openclosecount, targetcount, changetalkcount;
@@ -229,6 +233,7 @@ function UpdateLocalStorage(){
         storageObject.moduleEvoking = JSON.stringify(evok);
         storageObject.modulePlanning = JSON.stringify(plan);
         storageObject.moduleFullMIPractice = JSON.stringify(fullmi);
+        storageObject.moduleOrient = JSON.stringify(orient);
         // Scoring Answers
         storageObject.skillAffirm1 = JSON.stringify(oarsanswercorrect5);
         storageObject.skillAffirm2 = JSON.stringify(oarsanswercorrect6);
@@ -243,6 +248,7 @@ function UpdateLocalStorage(){
         storageObject.skillChangeTalk3 = JSON.stringify(evokanswercorrect3);
         storageObject.skillChangeTalk4 = JSON.stringify(evokanswercorrect4);
         storageObject.skillChangeTalk5 = JSON.stringify(evokanswercorrect5);
+        storageObject.skillPriorKnowledge = JSON.stringify(orientanswercorrect);
         // Update local storage of each progress indicator
         storageObject.setItem("PercentageBaseline",Math.round(perbaspro));
         storageObject.setItem("PercentagePostTreatment",Math.round(perpospro));
@@ -262,6 +268,7 @@ function UpdateLocalStorage(){
         storageObject.setItem("PercentageEvoking",Math.round(perevokpro));
         storageObject.setItem("PercentagePlanning",Math.round(perplanpro));
         storageObject.setItem("PercentageFullMIPractice",Math.round(perfullmipro));
+        storageObject.setItem("PercentagePriorKnowledge",Math.round(perorientpro));
         // Update local storage of each count progress indicator
         storageObject.setItem("CountBaseline",Math.round(baspro));
         storageObject.setItem("CountPostTreatment",Math.round(pospro));
@@ -281,6 +288,7 @@ function UpdateLocalStorage(){
         storageObject.setItem("CountEvoking",Math.round(evokpro));
         storageObject.setItem("CountPlanning",Math.round(planpro));
         storageObject.setItem("CountFullMIPractice",Math.round(fullmipro));
+        storageObject.setItem("CountPriorKnowledge",Math.round(perorientpro));
         
         storageObject.setItem("PercentageAffirm",Math.round(peraffirm));
         storageObject.setItem("PercentageReflect",Math.round(perreflect));
@@ -386,6 +394,7 @@ function parseStorageData(storageObject){
         evok = JSON.parse(storageObject.moduleEvoking);
         plan = JSON.parse(storageObject.modulePlanning);
         fullmi = JSON.parse(storageObject.moduleFullMIPractice);
+        orient = JSON.parse(storageObject.moduleOrient);
         // Scoring Answers
         oarsanswercorrect5 = JSON.parse(storageObject.skillAffirm1);
         oarsanswercorrect6 = JSON.parse(storageObject.skillAffirm2);
@@ -400,6 +409,7 @@ function parseStorageData(storageObject){
         evokanswercorrect3 = JSON.parse(storageObject.skillChangeTalk3);
         evokanswercorrect4 = JSON.parse(storageObject.skillChangeTalk4);
         evokanswercorrect5 = JSON.parse(storageObject.skillChangeTalk5);
+        orientanswercorrect = JSON.parse(storageObject.skillPriorKnowledge);
         // Set Progress Indicators
         perbaspro = parseInt(storageObject.PercentageBaseline);
         perpospro = parseInt(storageObject.PercentagePostTreatment);
@@ -419,6 +429,7 @@ function parseStorageData(storageObject){
         perevokpro = parseInt(storageObject.PercentageEvoking);
         perplanpro = parseInt(storageObject.PercentagePlanning);
         perfullmipro = parseInt(storageObject.PercentageFullMIPractice);
+        perorientpro = parseInt(storageObject.PercentagePriorKnowledge)
         // Set Count for Progress Indicators
         baspro = parseInt(storageObject.CountBaseline);
         pospro = parseInt(storageObject.CountPostTreatment);
@@ -438,6 +449,7 @@ function parseStorageData(storageObject){
         evokpro = parseInt(storageObject.CountEvoking);
         planpro = parseInt(storageObject.CountPlanning);
         fullmipro = parseInt(storageObject.CountFullMIPractice);
+        orientpro = parseInt(storageObject.CountPriorKnowledge);
         // Set Percentage of Item Correct Aligned with Skills
         peraffirm = parseInt(storageObject.PercentageAffirm);
         perreflect = parseInt(storageObject.PercentageReflect);
@@ -506,6 +518,7 @@ function UpdateProgressMetrics(){
     perevokpro = evokpro/100*100;
     perplanpro = planpro/11*100;
     perfullmipro = fullmipro/1*100;
+    perorientpro = orientpro/1*100;
     
     // Calculate percentage of skill acquisition based on correct items
     affirmcount = UpdateProgressResponseCorrect(oarsanswercorrect5) + UpdateProgressResponseCorrect(oarsanswercorrect6);
@@ -4428,6 +4441,20 @@ function addEventListeners(){
         fullmipro = UpdateProgressIndicator(fullmi);
         UpdateProgressMetrics();
         UpdateLocalStorage();
+    });
+    
+    // Orientation
+    $(".orient1submit").click(function(){
+        orient[0] = GetItemRadioButton3();
+        if(orient[0]=="N/A"){
+            
+        }else{
+            orientpro = UpdateProgressIndicator(orient);
+            orientanswercorrect[0] = CorrectAnswer(orient,orientanswerkey,0,0);
+            AgentFeedback(orientanswercorrect,0);
+            UpdateProgressMetrics();
+            UpdateLocalStorage();
+        }
     });
 
 }
