@@ -74,10 +74,11 @@ function refreshloggervalues(){
 }
 
 // Data Logging Function
-function datalogger(categorylabel, eventlabel){
+function datalogger(categorylabel, eventlabel, qualifierlabel){
     
     var newitem = {
         session: sessionStorage.sessionid,
+        username: localStorage.username,
         timestamp: n,
         timer: timer,
         counter: counter,
@@ -91,10 +92,12 @@ function datalogger(categorylabel, eventlabel){
         pagexoffset: pagexoffset,
         pageyoffset: pageyoffset,
         category: categorylabel,
-        event: eventlabel
+        event: eventlabel, 
+        qualifier: qualifierlabel
     };
     
-    //localStorage.sessionlog = JSON.stringify(newitem);
+    localStorage.sessionlog = JSON.stringify(newitem);
+    $.post("../../admin/researchlog.php",{logtimestamp: n, logtimer: timer, logcounter: counter, logwebpage: docurl, loglabel: JSON.stringify(newitem)});
 
     if(typeof serverintegration !== 'undefined' && serverintegration){
         ep.getFunctionAsObjectJSON(8803,{'jsondata':JSON.stringify(newitem)},function(json){
@@ -104,74 +107,111 @@ function datalogger(categorylabel, eventlabel){
 }
 
 // Event Handlers
-$(document).on("load",function(){
+
+$(window).on("load",function(){
     refreshloggervalues();
-    datalogger("NavigationEvent","DocumentLoad");
+    datalogger("NavigationEvent","DocumentLoad","N/A");
 });
 
-$(document).on("unload",function(){
+$(window).on("unload",function(){
     refreshloggervalues();
-    datalogger("NavigationEvent","DocumentUnload");
+    datalogger("NavigationEvent","DocumentUnload","N/A");
 });
 
-$(document).on("click","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+$(document).on("click","button, a, textarea",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
+    var elementType = $(this).prop('nodeName');
     refreshloggervalues();
-    datalogger("ClickEvent",elementdescription);
+    datalogger("ClickEvent",elementdescription,elementType);
 });
 
-$(document).on("dblclick","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+$(document).on("dblclick","button, a, textarea",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
+    var elementType = $(this).prop('nodeName');
     refreshloggervalues();
-    datalogger("DBLClickEvent",elementdescription);
+    datalogger("DBLClickEvent",elementdescription,elementType);
 });
 
-$(document).on("contextmenu","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+$(document).on("click","input",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
+    var elementdescription = element.substring(0,500);
+    var elementType = $(this).attr('id');
+    refreshloggervalues();
+    datalogger("ClickEvent",elementdescription,elementType);
+});
+
+$(document).on("dblclick","input",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
+    var elementdescription = element.substring(0,500);
+    var elementType = $(this).attr('id');
+    refreshloggervalues();
+    datalogger("DBLClickEvent",elementdescription,elementType);
+});
+
+/*$(document).on("contextmenu","*",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
     refreshloggervalues();
     datalogger("ContextMenu",elementdescription);
 });
 
 $(document).on("mouseenter","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
     refreshloggervalues();
     datalogger("MouseEnter",elementdescription);
 });
 
 $(document).on("mouseleave","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
     refreshloggervalues();
     datalogger("MouseLeave",elementdescription);
-});
+});*/
 
-$(document).on("touchstart","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+$(document).on("touchstart","button, a, input, textarea",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
+    var elementType = $(this).prop('nodeName');
     refreshloggervalues();
-    datalogger("TouchStart",elementdescription);
+    datalogger("TouchStart",elementdescription,elementType);
 });
 
-$(document).on("touchend","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+$(document).on("touchend","button, a, input, textarea",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
+    var elementType = $(this).prop('nodeName');
     refreshloggervalues();
-    datalogger("TouchEnd",elementdescription);
+    datalogger("TouchEnd",elementdescription,elementType);
 });
 
+$(document).on("touchstart","input",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
+    var elementdescription = element.substring(0,500);
+    var elementType = $(this).attr('id');
+    refreshloggervalues();
+    datalogger("TouchStart",elementdescription,elementType);
+});
+
+$(document).on("touchend","input",function(){
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
+    var elementdescription = element.substring(0,500);
+    var elementType = $(this).attr('id');
+    refreshloggervalues();
+    datalogger("TouchEnd",elementdescription,elementType);
+});
+/*
 $(document).on("touchenter","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
     refreshloggervalues();
     datalogger("TouchEnter",elementdescription);
 });
 
 $(document).on("touchleave","*",function(){
-    var element = $(this).html().replace(/\r?\n|\r|\s/g,"");
+    var element = $(this).html().replace(/\r?\n|\r|\s|["']/g,"");
     var elementdescription = element.substring(0,500);
     refreshloggervalues();
     datalogger("TouchLeave",elementdescription);
@@ -185,11 +225,12 @@ $(document).on("scroll",function(){
 $(window).on("resize",function(){
     refreshloggervalues();
     datalogger("Resize","N/A");
-});
+});*/
 
-$(document).on("change paste keyup","*",function(){
-    var elementvalue = $(this).val().replace(/\r?\n|\r|\s/g,"");
-    var elementdescription = elementvalue.toString().substring(0,500);
+$(document).on("change paste keyup","textarea",function(){
+    var elementvalue = $(this).val();
+    //var elementdescription = elementvalue.toString().substring(0,500);
+    var elementcontent = $(this).prop('nodeName');
     refreshloggervalues();
-    datalogger("InputEvent",elementdescription);
+    datalogger("InputEvent",elementvalue,elementcontent);
 });
