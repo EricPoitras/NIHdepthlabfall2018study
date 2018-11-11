@@ -97,13 +97,16 @@ function datalogger(categorylabel, eventlabel, qualifierlabel){
     };
     
     localStorage.sessionlog = JSON.stringify(newitem);
-    $.post("../../admin/researchlog.php",{logtimestamp: n, logtimer: timer, logcounter: counter, logwebpage: docurl, loglabel: JSON.stringify(newitem)});
 
     if(typeof serverintegration !== 'undefined' && serverintegration){
         ep.getFunctionAsObjectJSON(8803,{'jsondata':JSON.stringify(newitem)},function(json){
             console.log("Sent Log Data to Server");
             })
     }
+    
+    // Log research data to MySQL database - lab evaluation EP 11 10 2018
+    $.post("../../admin/researchlog.php",{logtimestamp: n, logtimer: timer, logcounter: counter, logwebpage: docurl, loglabel: JSON.stringify(newitem)});
+    
 }
 
 // Event Handlers

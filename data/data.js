@@ -237,6 +237,9 @@ function UpdateLocalStorage(){
         // Scoring Answers
         storageObject.skillAffirm1 = JSON.stringify(oarsanswercorrect5);
         storageObject.skillAffirm2 = JSON.stringify(oarsanswercorrect6);
+        storageObject.skillReflection3 = JSON.stringify(oarsanswercorrect7);
+        storageObject.skillReflection4 = JSON.stringify(oarsanswercorrect8);
+        storageObject.skillReflection5 = JSON.stringify(oarsanswercorrect9);
         storageObject.skillReflection1 = JSON.stringify(oarsanswercorrect4);
         storageObject.skillReflection2 = JSON.stringify(targetanswercorrect2);
         storageObject.skillQuestions1 = JSON.stringify(oarsanswercorrect1);
@@ -288,7 +291,7 @@ function UpdateLocalStorage(){
         storageObject.setItem("CountEvoking",Math.round(evokpro));
         storageObject.setItem("CountPlanning",Math.round(planpro));
         storageObject.setItem("CountFullMIPractice",Math.round(fullmipro));
-        storageObject.setItem("CountPriorKnowledge",Math.round(perorientpro));
+        storageObject.setItem("CountPriorKnowledge",Math.round(orientpro));
         
         storageObject.setItem("PercentageAffirm",Math.round(peraffirm));
         storageObject.setItem("PercentageReflect",Math.round(perreflect));
@@ -296,16 +299,28 @@ function UpdateLocalStorage(){
         storageObject.setItem("PercentageTarget",Math.round(pertarget));
         storageObject.setItem("PercentageChangeTalk",Math.round(perchangetalk));
 
-
-
         //send to server if we are integrated
         if(serverintegration ){
             ep.getFunctionAsObjectJSON(8801,{'jsondata':JSON.stringify(storageObject)},function(json){
                 console.log("Sent Data to Server");})
         }
-
-
-
+        
+        // Log performance data to MySQL database - lab evaluation EP 11 10 2018
+        d = new Date();
+        n = d.toUTCString();
+        docurl = document.URL;
+        var newitem = {
+        session: sessionStorage.sessionid,
+        username: localStorage.username,
+        timestamp: n,
+        page: docurl,
+        oarsmodule: localStorage.moduleOARS,
+        orientmodule: localStorage.moduleOrient,
+        identificationmodule: localStorage.skillReflection3,
+        categorizationmodule: localStorage.skillReflection4,
+        elaborationmodule: localStorage.skillReflection5 
+        };
+        $.post("../../admin/performancelog.php",{logtimestamp: n, logwebpage: docurl, loglabel: JSON.stringify(newitem)});
 
     }catch(err){
         console.log(err.message);
@@ -398,6 +413,9 @@ function parseStorageData(storageObject){
         // Scoring Answers
         oarsanswercorrect5 = JSON.parse(storageObject.skillAffirm1);
         oarsanswercorrect6 = JSON.parse(storageObject.skillAffirm2);
+        oarsanswercorrect7 = JSON.parse(storageObject.skillReflection3);
+        oarsanswercorrect8 = JSON.parse(storageObject.skillReflection4);
+        oarsanswercorrect9 = JSON.parse(storageObject.skillReflection5);
         oarsanswercorrect4 = JSON.parse(storageObject.skillReflection1);
         targetanswercorrect2 = JSON.parse(storageObject.skillReflection2);
         oarsanswercorrect1 = JSON.parse(storageObject.skillQuestions1);
@@ -524,8 +542,8 @@ function UpdateProgressMetrics(){
     affirmcount = UpdateProgressResponseCorrect(oarsanswercorrect5) + UpdateProgressResponseCorrect(oarsanswercorrect6);
     peraffirm = affirmcount/15*100;
     
-    reflectcount = UpdateProgressResponseCorrect(oarsanswercorrect4) + UpdateProgressResponseCorrect(targetanswercorrect2);
-    perreflect = reflectcount/11*100;
+    reflectcount = UpdateProgressResponseCorrect(oarsanswercorrect4) + UpdateProgressResponseCorrect(targetanswercorrect2) + UpdateProgressResponseCorrect(oarsanswercorrect7) + UpdateProgressResponseCorrect(oarsanswercorrect8) + UpdateProgressResponseCorrect(oarsanswercorrect9);
+    perreflect = reflectcount/47*100;
     
     openclosecount = UpdateProgressResponseCorrect(oarsanswercorrect1) + UpdateProgressResponseCorrect(oarsanswercorrect2) + UpdateProgressResponseCorrect(oarsanswercorrect3);
     peropenclose = openclosecount/39*100;
