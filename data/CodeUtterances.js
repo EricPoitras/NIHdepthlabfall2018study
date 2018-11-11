@@ -58,6 +58,14 @@ CodeUtterances = {
         // Eric: Store best guesses of each model in session storage
         sessionStorage.setItem("utterrnn",utterrnn.bestguess);
         sessionStorage.setItem("utterdsf",utterdsf.bestguess);
+        
+        // Log performance data to MySQL database - lab evaluation EP 11 10 2018
+        d = new Date();
+        n = d.toUTCString();
+        docurl = document.URL;
+        console.log(utterrnn);
+        console.log(utterdsf);
+        $.post("../../admin/apilog.php",{logtimestamp: n, logwebpage: docurl, logutterrnn: JSON.stringify(utterrnn), logutterdsf: JSON.stringify(utterdsf)});
     },
     renderCorrectionPossibilities:function(utterance){
         // Eric: This function is not called anymore
