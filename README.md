@@ -1,4 +1,4 @@
-# NIHdepthlabfall2018study
+# NIHdepthlabfall2018study (Treatment Condition)
 Duplicate version with modifications of NIH Depth for data collection purposes in the laboratory
 
 MySQL Database
