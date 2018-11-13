@@ -7,26 +7,23 @@ Create a database called "mitutor"
 
 Use the following command in SQL:
 
-CREATE TABLE IF NOT EXISTS `logapidata` (
+CREATE TABLE `logapidata` (
   `timestamp` tinytext NOT NULL,
   `webpage` text NOT NULL,
   `utterrnn` longtext NOT NULL,
-  `utterdsf` longtext NOT NULL,
-  PRIMARY KEY (`webpage`)
-);
+  `utterdsf` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `logperformancedata` (
+CREATE TABLE `logperformancedata` (
   `timestamp` tinytext NOT NULL,
   `webpage` text NOT NULL,
-  `label` longtext NOT NULL,
-  PRIMARY KEY (`webpage`)
-);
+  `label` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `logtracedata` (
+CREATE TABLE `logtracedata` (
   `timestamp` tinytext NOT NULL,
   `timer` double NOT NULL,
   `counter` int(11) NOT NULL,
   `webpage` text NOT NULL,
-  `label` longtext NOT NULL,
-  PRIMARY KEY (`webpage`)
-);
+  `label` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
