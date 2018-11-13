@@ -311,7 +311,7 @@ function UpdateLocalStorage(){
         docurl = document.URL;
         var newitem = {
         session: sessionStorage.sessionid,
-        username: localStorage.username,
+        username: sessionStorage.username,
         timestamp: n,
         page: docurl,
         oarsmodule: localStorage.moduleOARS,
@@ -1479,6 +1479,7 @@ function addEventListeners(){
     $(".usernamesubmit").click(function(){
         username = $(".usernameval").val();
         UpdateLocalStorage();
+        sessionStorage.setItem("username",username);
     });
 
     $(".passwordsubmit").click(function(){

@@ -78,7 +78,7 @@ function datalogger(categorylabel, eventlabel, qualifierlabel){
     
     var newitem = {
         session: sessionStorage.sessionid,
-        username: localStorage.username,
+        username: sessionStorage.username,
         timestamp: n,
         timer: timer,
         counter: counter,
