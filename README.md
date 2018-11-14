@@ -1,6 +1,8 @@
 # NIHdepthlabfall2018study (Treatment Condition)
 Duplicate version with modifications of NIH Depth for data collection purposes in the laboratory
 
+Modify the absolute link to the php files in admin directory. The modification should occur in each js file in the data directory in the function labeled as "$.post()".  
+
 MySQL Database
 
 Create a database called "mitutor"
