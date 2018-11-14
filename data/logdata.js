@@ -105,7 +105,7 @@ function datalogger(categorylabel, eventlabel, qualifierlabel){
     }
     
     // Log research data to MySQL database - lab evaluation EP 11 10 2018
-    $.post("../../admin/researchlog.php",{logtimestamp: n, logtimer: timer, logcounter: counter, logwebpage: docurl, loglabel: JSON.stringify(newitem)});
+    $.post("http://localhost/KentEllsworthMAThesisFall2018MITutorFeedbackStudy/NIHdepthlabfall2018Corrective/admin/researchlog.php",{logtimestamp: n, logtimer: timer, logcounter: counter, logwebpage: docurl, loglabel: JSON.stringify(newitem)});
     
 }
 

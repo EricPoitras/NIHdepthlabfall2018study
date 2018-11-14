@@ -318,9 +318,19 @@ function UpdateLocalStorage(){
         orientmodule: localStorage.moduleOrient,
         identificationmodule: localStorage.skillReflection3,
         categorizationmodule: localStorage.skillReflection4,
-        elaborationmodule: localStorage.skillReflection5 
+        elaborationmodule: localStorage.skillReflection5,
+        prevaser : localStorage.baselinevaser,
+        postvaser: localStorage.postvaser,
+        prevaseritem: localStorage.baselinevaseritem,
+        postvaseritem: localStorage.postvaseritem, 
+        prevaserjust: localStorage.baselinevaseropen, 
+        postvaserjust: localStorage.postvaseropen,
+        prehrq: localStorage.baselinehrq,
+        posthrq: localStorage.posthrq, 
+        premit: localStorage.baselinemit, 
+        postmit: localStorage.postmit       
         };
-        $.post("../../admin/performancelog.php",{logtimestamp: n, logwebpage: docurl, loglabel: JSON.stringify(newitem)});
+        $.post("http://localhost/KentEllsworthMAThesisFall2018MITutorFeedbackStudy/NIHdepthlabfall2018Corrective/admin/performancelog.php",{logtimestamp: n, logwebpage: docurl, loglabel: JSON.stringify(newitem)});
 
     }catch(err){
         console.log(err.message);
@@ -2260,7 +2270,7 @@ function addEventListeners(){
             ValidationNegative();
         }else{
             ValidationPositive();
-
+            ValidationTextbox();
         basmitakpro = UpdateProgressIndicator(basmit);
         UpdateProgressMetrics();
         UpdateLocalStorage();
@@ -2340,7 +2350,7 @@ function addEventListeners(){
             ValidationNegative();
         }else{
             ValidationPositive();
-
+            ValidationTextbox();
         posmitakpro = UpdateProgressIndicator(posmit);
         UpdateProgressMetrics();
         UpdateLocalStorage();
@@ -2419,6 +2429,7 @@ function addEventListeners(){
             ValidationNegative();
         }else{
             ValidationPositive();
+            ValidationTextbox();
         fol1mitakpro = UpdateProgressIndicator(fol1mit);
         UpdateProgressMetrics();
         UpdateLocalStorage();
@@ -2496,6 +2507,7 @@ function addEventListeners(){
             ValidationNegative();
         }else{
             ValidationPositive();
+            ValidationTextbox();
         fol2mitakpro = UpdateProgressIndicator(fol2mit);
         UpdateProgressMetrics();
         UpdateLocalStorage();

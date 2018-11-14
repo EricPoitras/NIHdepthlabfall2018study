@@ -65,7 +65,7 @@ CodeUtterances = {
         docurl = document.URL;
         console.log(utterrnn);
         console.log(utterdsf);
-        $.post("../../admin/apilog.php",{logtimestamp: n, logwebpage: docurl, logutterrnn: JSON.stringify(utterrnn), logutterdsf: JSON.stringify(utterdsf)});
+        $.post("http://localhost/KentEllsworthMAThesisFall2018MITutorFeedbackStudy/NIHdepthlabfall2018Corrective/admin/apilog.php",{logtimestamp: n, logwebpage: docurl, session: sessionStorage.sessionid, username: sessionStorage.username, logutterrnn: JSON.stringify(utterrnn), logutterdsf: JSON.stringify(utterdsf)});
     },
     renderCorrectionPossibilities:function(utterance){
         // Eric: This function is not called anymore
