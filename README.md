@@ -10,6 +10,8 @@ Use the following command in SQL:
 CREATE TABLE `logapidata` (
   `timestamp` tinytext NOT NULL,
   `webpage` text NOT NULL,
+  `session` mediumtext NOT NULL,
+  `username` mediumtext NOT NULL,
   `utterrnn` longtext NOT NULL,
   `utterdsf` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
