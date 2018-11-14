@@ -21,9 +21,11 @@ $timestamp = $_POST["logtimestamp"];
 $webpage = $_POST["logwebpage"];
 $logutterrnn = $_POST["logutterrnn"];
 $logutterdsf = $_POST["logutterdsf"];
+$session = $_POST["session"];
+$username = $_POST["username"];
 
-$sql = "INSERT INTO logapidata (timestamp, webpage, utterrnn, utterdsf)
-VALUES ('$timestamp', '$webpage', '$logutterrnn', '$logutterdsf')";
+$sql = "INSERT INTO logapidata (timestamp, webpage, session, username, utterrnn, utterdsf)
+VALUES ('$timestamp', '$webpage', '$session', '$username', '$logutterrnn', '$logutterdsf')";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
